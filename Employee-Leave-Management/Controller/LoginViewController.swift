@@ -16,14 +16,15 @@ class LoginViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func LoginButtonPressed(_ sender: UIButton) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let emailLoginViewController = storyBoard.instantiateViewController(withIdentifier: "homePage")
+        emailLoginViewController.modalPresentationStyle = .fullScreen
+        self.present(emailLoginViewController, animated:true, completion:nil)
     }
-    */
-
+    
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
