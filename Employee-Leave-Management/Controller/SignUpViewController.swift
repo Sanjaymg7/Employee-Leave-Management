@@ -43,6 +43,15 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func signupButtonPressed(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let HomePageViewController = storyBoard.instantiateViewController(withIdentifier: "homePage")
+        HomePageViewController.modalPresentationStyle = .fullScreen
+        self.present(HomePageViewController, animated:true, completion:nil)
+    }
+    
+    
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
     
 }
