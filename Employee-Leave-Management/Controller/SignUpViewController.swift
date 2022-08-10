@@ -13,6 +13,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var emailInput: UITextField!
     @IBOutlet weak var profilePictureImage: UIImageView!
+    @IBOutlet weak var isManager: UISwitch!
     
     var imagePicker = UIImagePickerController()
     
