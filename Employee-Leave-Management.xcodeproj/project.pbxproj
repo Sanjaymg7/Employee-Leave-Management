@@ -14,6 +14,8 @@
 		A1063EA828A37AAA004C1FE4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1063EA728A37AAA004C1FE4 /* SignUpViewController.swift */; };
 		A1063EAC28A37AE5004C1FE4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1063EAB28A37AE5004C1FE4 /* HomeViewController.swift */; };
 		A1063EAF28A37B27004C1FE4 /* MyManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1063EAE28A37B27004C1FE4 /* MyManagerViewController.swift */; };
+		A1063EBB28A39627004C1FE4 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1063EBA28A39627004C1FE4 /* Employee.swift */; };
+		A1063EBE28A3ADAA004C1FE4 /* EmployeeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1063EBD28A3ADAA004C1FE4 /* EmployeeDataManager.swift */; };
 		A11E6CF728A26D6E00725122 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11E6CF628A26D6E00725122 /* AppDelegate.swift */; };
 		A11E6CF928A26D6E00725122 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11E6CF828A26D6E00725122 /* SceneDelegate.swift */; };
 		A11E6CFB28A26D6E00725122 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11E6CFA28A26D6E00725122 /* ViewController.swift */; };
@@ -30,6 +32,8 @@
 		A1063EA728A37AAA004C1FE4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A1063EAB28A37AE5004C1FE4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A1063EAE28A37B27004C1FE4 /* MyManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyManagerViewController.swift; sourceTree = "<group>"; };
+		A1063EBA28A39627004C1FE4 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = SOURCE_ROOT; };
+		A1063EBD28A3ADAA004C1FE4 /* EmployeeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDataManager.swift; sourceTree = SOURCE_ROOT; };
 		A11E6CF328A26D6E00725122 /* Employee-Leave-Management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Employee-Leave-Management.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A11E6CF628A26D6E00725122 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A11E6CF828A26D6E00725122 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +81,8 @@
 		A1063EA628A37746004C1FE4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A1063EBA28A39627004C1FE4 /* Employee.swift */,
+				A1063EBD28A3ADAA004C1FE4 /* EmployeeDataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,7 +191,9 @@
 				5E9A9D1F28A3885400194FEE /* MyLeavesTableViewController.swift in Sources */,
 				A1063EAC28A37AE5004C1FE4 /* HomeViewController.swift in Sources */,
 				A11E6CFB28A26D6E00725122 /* ViewController.swift in Sources */,
+				A1063EBB28A39627004C1FE4 /* Employee.swift in Sources */,
 				A11E6CF728A26D6E00725122 /* AppDelegate.swift in Sources */,
+				A1063EBE28A3ADAA004C1FE4 /* EmployeeDataManager.swift in Sources */,
 				5E9A9D1B28A3875000194FEE /* LoginViewController.swift in Sources */,
 				5E9A9D2328A3890E00194FEE /* ApplyLeavesViewController.swift in Sources */,
 				A1063EA828A37AAA004C1FE4 /* SignUpViewController.swift in Sources */,
