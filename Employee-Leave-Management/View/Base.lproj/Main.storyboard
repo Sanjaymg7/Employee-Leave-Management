@@ -41,7 +41,7 @@
         <!--Signup View Controller-->
         <scene sceneID="04W-kW-IXl">
             <objects>
-                <viewController title="Signup View Controller" modalPresentationStyle="fullScreen" id="wmJ-Yb-uBs" sceneMemberID="viewController">
+                <viewController title="Signup View Controller" modalPresentationStyle="fullScreen" id="wmJ-Yb-uBs" customClass="SignUpViewController" customModule="Employee_Leave_Management" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PPS-OS-h71">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,6 +74,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5l-wr-EyG">
                                 <rect key="frame" x="148" y="542" width="119" height="99"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="uploadProfilePictureClicked:" destination="wmJ-Yb-uBs" eventType="touchUpInside" id="jJO-SR-4AW"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="square.and.arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VYt-mE-GBc">
                                 <rect key="frame" x="148" y="541" width="119" height="100"/>
@@ -87,6 +90,9 @@
                                 <state key="normal" title="SignUp">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="signupButtonPressed:" destination="wmJ-Yb-uBs" eventType="touchUpInside" id="fLQ-HZ-h5J"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cQp-ky-ZK3"/>
@@ -94,6 +100,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="BzH-wT-spW"/>
                     <connections>
+                        <outlet property="emailInput" destination="fh1-EU-WQf" id="Ms3-W9-vY3"/>
+                        <outlet property="fullNameInput" destination="uTE-BG-y5g" id="roO-Qh-pFQ"/>
+                        <outlet property="passwordInput" destination="xll-lb-Xih" id="a20-9x-K4O"/>
+                        <outlet property="profilePictureImage" destination="VYt-mE-GBc" id="15M-Ig-zhl"/>
                         <segue destination="UTc-hD-Zc0" kind="show" identifier="HomePage" id="Fsl-eY-LNX"/>
                     </connections>
                 </viewController>
@@ -104,7 +114,7 @@
         <!--Home View Controller-->
         <scene sceneID="Eq2-Mn-txJ">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="UTc-hD-Zc0" userLabel="Home View Controller" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="UTc-hD-Zc0" userLabel="Home View Controller" customClass="HomeViewController" customModule="Employee_Leave_Management" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sme-hB-onY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
