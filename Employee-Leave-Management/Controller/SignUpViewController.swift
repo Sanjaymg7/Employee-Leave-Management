@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class SignUpViewController: UIViewController {
     
     @IBOutlet weak var fullNameInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
@@ -16,34 +16,47 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var isManager: UISwitch!
     
     var imagePicker = UIImagePickerController()
+    var profileImage:UIImage?
+    var employeeDataManager = EmployeeDataManager()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     
     @IBAction func uploadProfilePictureClicked(_ sender: Any) {
+        
         if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
-            
             imagePicker.delegate = self
             imagePicker.sourceType = .savedPhotosAlbum
             imagePicker.allowsEditing = false
-            
             present(imagePicker, animated: true, completion: nil)
+        }
+        
+    }
+    
+    
+    @IBAction func signupButtonPressed(_ sender: Any) {
+        
+        let fullName = fullNameInput.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let email = emailInput.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let password = passwordInput.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let managerBoolean = isManager.isOn
+        if let image = profileImage{
+            if((fullName != nil) && (email != nil) && (password != nil)){
+                let employee = employeeDataManager.createEmployee(fullName: fullName!, email: email!, password: password!, profilePicture: image, isManager: managerBoolean)
+                print(employee)
+            }
         }
     }
     
+}
+
+extension SignUpViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             profilePictureImage.contentMode = .scaleAspectFit
             profilePictureImage.image = pickedImage
+            profileImage = pickedImage
         }
-        
-        self.dismiss(animated: true, completion: { () -> Void in
-        })
-    }
-    
-    @IBAction func signupButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
