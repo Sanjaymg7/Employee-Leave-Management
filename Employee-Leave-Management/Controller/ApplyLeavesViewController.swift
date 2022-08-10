@@ -1,13 +1,13 @@
 //
-//  LeaveRequestViewController.swift
+//  ApplyLeavesViewController.swift
 //  Employee-Leave-Management
 //
-//  Created by Sanjay M G on 10/08/22.
+//  Created by Yashwitha on 10/08/22.
 //
 
 import UIKit
 
-class LeaveRequestViewController: UIViewController {
+class ApplyLeavesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
