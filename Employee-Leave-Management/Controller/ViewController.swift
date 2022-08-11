@@ -7,6 +7,8 @@
 
 import UIKit
 
+var currentEmployee:Employee?
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
