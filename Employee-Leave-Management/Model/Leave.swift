@@ -6,10 +6,10 @@
 //
 
 import Foundation
-enum LeaveStatus:Codable{
-    case accepted
-    case rejected
-    case applied
+enum LeaveStatus:String,Codable{
+    case accepted="accepted"
+    case rejected="rejected"
+    case applied="applied"
 }
 struct Leave:Codable{
     var fromDate:String

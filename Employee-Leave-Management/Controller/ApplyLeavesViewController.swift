@@ -14,7 +14,7 @@ class ApplyLeavesViewController: UIViewController ,UITextViewDelegate{
     @IBOutlet weak var ToDate: UITextField!
     @IBOutlet weak var Reason: UITextField!
     let datePicker = UIDatePicker()
- 
+    var leaveDataManger = LeaveDataManager()
     override func viewDidLoad() {
         super.viewDidLoad()
         createDatePicker()
@@ -40,14 +40,19 @@ class ApplyLeavesViewController: UIViewController ,UITextViewDelegate{
         datePicker.datePickerMode = .date
     }
     @IBAction func SubmitButtonPressed(_ sender: UIButton) {
+        print(leaveDataManger.getAllLeaves())
         let fromDate = FromDate.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let toDate = ToDate.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let reason = Reason.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-            if((fromDate != nil) && (toDate != nil) && (Reason != nil)){
-//                let leaveRequest = leaveDataManager.createLeaveReuests(fromDate: fromDate!, toDate: toDate!, reason: reason!, requestorID: , managerID: <#T##String#>)
-//                print(employee)
-            }
+        if let currentEmployee = employee{
+            if((fromDate != "") && (toDate != "")  && (reason != "")){
+//                let leaveRequest = leaveDataManger.leaveReuests(fromDate: fromDate!, toDate: toDate!, reason: reason!, requestorID: currentEmployee.employeeId, managerID: currentEmployee.managerID,status: LeaveStatus.applied.rawValue)
+                dismiss(animated: true, completion: nil)
         }
+       
+        }
+        }
+        
     
         
     

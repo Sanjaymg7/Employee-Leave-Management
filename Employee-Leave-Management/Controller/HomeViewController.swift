@@ -44,9 +44,9 @@ class HomeViewController: UIViewController {
     
     @IBAction func LogoutButtonPressed(_ sender: UIButton) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let LeaveRequestsViewController = storyBoard.instantiateViewController(withIdentifier: "MainPage")
-        LeaveRequestsViewController.modalPresentationStyle = .fullScreen
-        self.present(LeaveRequestsViewController, animated:true, completion:nil)
+        let HomePageViewController = storyBoard.instantiateViewController(withIdentifier: "MainPage")
+        HomePageViewController.modalPresentationStyle = .fullScreen
+        self.present(HomePageViewController, animated:true, completion:nil)
     }
     
     
@@ -57,9 +57,9 @@ class HomeViewController: UIViewController {
                     destinationVC.employee = currentEmployee
                 }
             }else if segue.identifier == "MyLeavesPage" {
-                let destinationVC = segue.destination as! MyLeavesTableViewController
+                let destinationVC = segue.destination as! MyLeavesViewController
                 if let currentEmployee = employee{
-                    destinationVC.employee = currentEmployee
+//                    destinationVC.employee = currentEmployee
                 }
             }else if segue.identifier == "MyManagerPage" {
                 let destinationVC = segue.destination as! MyManagerViewController
@@ -67,9 +67,9 @@ class HomeViewController: UIViewController {
                     destinationVC.employee = currentEmployee
                 }
             }else if segue.identifier == "LeaveRequestsPage" {
-                let destinationVC = segue.destination as! LeaveRequestTableViewController
+                let destinationVC = segue.destination as! LeaveReuestViewController
                 if let currentEmployee = employee{
-                    destinationVC.employee = currentEmployee
+//                    destinationVC.employee = currentEmployee
                 }
             }
         }
