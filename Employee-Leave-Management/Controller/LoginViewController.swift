@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
 
     @IBAction func LoginButtonPressed(_ sender: UIButton) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let emailLoginViewController = storyBoard.instantiateViewController(withIdentifier: "homePage")
+        let emailLoginViewController = storyBoard.instantiateViewController(withIdentifier: "HomePage")
         emailLoginViewController.modalPresentationStyle = .fullScreen
         self.present(emailLoginViewController, animated:true, completion:nil)
     }
