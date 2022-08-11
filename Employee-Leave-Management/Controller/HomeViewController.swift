@@ -8,42 +8,38 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+    @IBOutlet weak var leaveRequestButton: UIButton!
+    @IBOutlet weak var welcomeUserLabel: UILabel!
+    var employee:Employee?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if let currentEmployee = employee{
+            welcomeUserLabel.text = "Welcome \(currentEmployee.fullName)"
+            if !currentEmployee.isManager{
+                leaveRequestButton.isHidden = true
+            }
+        }
     }
     
 
     
     @IBAction func ApplyLeaveButtonPressed(_ sender: UIButton) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let ApplyLeaveViewController = storyBoard.instantiateViewController(withIdentifier: "applyLeave")
-        ApplyLeaveViewController.modalPresentationStyle = .fullScreen
-        self.present(ApplyLeaveViewController, animated:true, completion:nil)
+        performSegue(withIdentifier: "ApplyLeavePage", sender: self)
     }
     
    
     @IBAction func MyLeaveButtonPressed(_ sender: UIButton) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let MyLeaveViewController = storyBoard.instantiateViewController(withIdentifier: "myLeaves")
-        MyLeaveViewController.modalPresentationStyle = .fullScreen
-        self.present(MyLeaveViewController, animated:true, completion:nil)
+        performSegue(withIdentifier: "MyLeavesPage", sender: self)
     }
     
     @IBAction func MyManagerButtonPressed(_ sender: UIButton) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let MyManagerViewController = storyBoard.instantiateViewController(withIdentifier: "managerDetails")
-        MyManagerViewController.modalPresentationStyle = .fullScreen
-        self.present(MyManagerViewController, animated:true, completion:nil)
+        performSegue(withIdentifier: "MyManagerPage", sender: self)
     }
     
     @IBAction func LeaveRequestsButtonPressed(_ sender: UIButton) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let LeaveRequestsViewController = storyBoard.instantiateViewController(withIdentifier: "leaveRequests")
-        LeaveRequestsViewController.modalPresentationStyle = .fullScreen
-        self.present(LeaveRequestsViewController, animated:true, completion:nil)
+        performSegue(withIdentifier: "LeaveRequestsPage", sender: self)
     }
     
     @IBAction func LogoutButtonPressed(_ sender: UIButton) {
@@ -52,4 +48,30 @@ class HomeViewController: UIViewController {
         LeaveRequestsViewController.modalPresentationStyle = .fullScreen
         self.present(LeaveRequestsViewController, animated:true, completion:nil)
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "ApplyLeavePage" {
+                let destinationVC = segue.destination as! ApplyLeavesViewController
+                if let currentEmployee = employee{
+                    destinationVC.employee = currentEmployee
+                }
+            }else if segue.identifier == "MyLeavesPage" {
+                let destinationVC = segue.destination as! MyLeavesTableViewController
+                if let currentEmployee = employee{
+                    destinationVC.employee = currentEmployee
+                }
+            }else if segue.identifier == "MyManagerPage" {
+                let destinationVC = segue.destination as! MyManagerViewController
+                if let currentEmployee = employee{
+                    destinationVC.employee = currentEmployee
+                }
+            }else if segue.identifier == "LeaveRequestsPage" {
+                let destinationVC = segue.destination as! LeaveRequestTableViewController
+                if let currentEmployee = employee{
+                    destinationVC.employee = currentEmployee
+                }
+            }
+        }
+    
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -83,7 +83,7 @@
                                     <action selector="BackButtonPressed:" destination="wmJ-Yb-uBs" eventType="touchUpInside" id="MO8-mj-iyW"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="av0-4o-i0Y">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="av0-4o-i0Y">
                                 <rect key="frame" x="134" y="485" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="onTintColor" systemColor="labelColor"/>
@@ -118,7 +118,7 @@
                                 <rect key="frame" x="88" y="312" width="249" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mrd-Un-fX7">
                                 <rect key="frame" x="154" y="737" width="119" height="40"/>
@@ -157,6 +157,7 @@
                         <outlet property="isManager" destination="av0-4o-i0Y" id="D5Y-vY-g51"/>
                         <outlet property="passwordInput" destination="xll-lb-Xih" id="a20-9x-K4O"/>
                         <outlet property="profilePictureImage" destination="VYt-mE-GBc" id="15M-Ig-zhl"/>
+                        <segue destination="UTc-hD-Zc0" kind="show" identifier="HomePage" id="omh-HN-ADd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lfq-E4-Oqv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -182,7 +183,7 @@
                                 <rect key="frame" x="83" y="358" width="249" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MJA-k6-rua">
                                 <rect key="frame" x="82" y="431" width="249" height="34"/>
@@ -216,6 +217,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="3Vv-pV-OAf"/>
+                    <connections>
+                        <outlet property="userEmail" destination="T5t-BN-uNn" id="aBd-ih-NC5"/>
+                        <outlet property="userPassword" destination="MJA-k6-rua" id="GMp-qA-Q3R"/>
+                        <segue destination="UTc-hD-Zc0" kind="show" identifier="HomePage" id="d8i-f4-gEJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efg-Tv-OUr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -275,9 +281,6 @@
                                 <rect key="frame" x="305" y="44" width="89" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Logout">
-                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="15"/>
-                                </buttonConfiguration>
                                 <connections>
                                     <action selector="LogoutButtonPressed:" destination="UTc-hD-Zc0" eventType="touchUpInside" id="yEe-5E-gJA"/>
                                 </connections>
@@ -301,10 +304,18 @@
                     <navigationItem key="navigationItem" id="z9d-Ju-Mpo">
                         <barButtonItem key="rightBarButtonItem" title="Logout" style="plain" id="pJZ-KG-qib"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="leaveRequestButton" destination="oTA-HO-1qE" id="n7p-NY-Jm1"/>
+                        <outlet property="welcomeUserLabel" destination="jSa-ST-qGe" id="us1-G0-LP5"/>
+                        <segue destination="uWV-cW-87U" kind="show" identifier="MyManagerPage" id="F2B-nY-xUp"/>
+                        <segue destination="nnK-Vk-Mgy" kind="show" identifier="ApplyLeavePage" id="hur-jh-SmA"/>
+                        <segue destination="lKA-VL-Abj" kind="show" identifier="MyLeavesPage" id="Vxx-1n-DjU"/>
+                        <segue destination="Zg7-KS-8Ma" kind="show" identifier="LeaveRequestsPage" id="drg-GL-BbY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EcU-2M-LYV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8382.608695652174" y="273.88392857142856"/>
+            <point key="canvasLocation" x="7084" y="21"/>
         </scene>
         <!--My leaves View controller-->
         <scene sceneID="soH-wr-8JL">
@@ -341,7 +352,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="199" id="nfB-F3-Dnp">
-                                <rect key="frame" x="0.0" y="222.5" width="414" height="199"/>
+                                <rect key="frame" x="0.0" y="206" width="414" height="199"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nfB-F3-Dnp" id="Evh-lu-rcD">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="199"/>
@@ -384,6 +395,7 @@
                             <outlet property="delegate" destination="lKA-VL-Abj" id="zy1-M8-ncL"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="lx0-19-JpB"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgb-t6-Rc0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -424,7 +436,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="252" id="lzK-lW-abr">
-                                <rect key="frame" x="0.0" y="206.5" width="414" height="252"/>
+                                <rect key="frame" x="0.0" y="190" width="414" height="252"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lzK-lW-abr" id="LMO-oP-Lsv">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="252"/>
@@ -479,6 +491,7 @@
                             <outlet property="delegate" destination="Zg7-KS-8Ma" id="yiK-Rx-S8L"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="Ng4-y6-vwE"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UmK-gZ-fSB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -507,19 +520,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Manager Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="BLP-VG-c6m">
-                                <rect key="frame" x="127" y="514" width="159" height="30"/>
+                                <rect key="frame" x="128" y="433" width="159" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Jsj-bY-Pa9">
-                                <rect key="frame" x="86" y="596.5" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="labelColor"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Manager Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="qzN-nl-DGr">
-                                <rect key="frame" x="109" y="427" width="195" height="43"/>
+                                <rect key="frame" x="109" y="359" width="195" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -537,10 +545,12 @@
                                 <rect key="frame" x="318" y="44" width="89" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Logout">
-                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="15"/>
-                                </buttonConfiguration>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Jsj-bY-Pa9">
+                                <rect key="frame" x="87" y="515.5" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vmt-sb-Hob"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -548,10 +558,16 @@
                     <navigationItem key="navigationItem" id="ge5-Mq-zD9">
                         <barButtonItem key="rightBarButtonItem" title="Logout" style="plain" id="654-pa-BvU"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="managerEmailLabel" destination="BLP-VG-c6m" id="O4z-vA-JNl"/>
+                        <outlet property="managerNameLabel" destination="qzN-nl-DGr" id="FEa-7x-tXi"/>
+                        <outlet property="managerProfilePicture" destination="Jsj-bY-Pa9" id="rMo-X3-j6t"/>
+                        <outlet property="userWelcomeLabel" destination="Fg3-Z4-tI8" id="w8A-6f-MjJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LwK-WX-eCL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9239.1304347826099" y="493.52678571428567"/>
+            <point key="canvasLocation" x="8611.5942028985519" y="387.72321428571428"/>
         </scene>
         <!--Apply Leaves View Controller-->
         <scene sceneID="i4N-4G-tcp">
@@ -619,9 +635,6 @@
                                 <rect key="frame" x="305" y="44" width="89" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Logout">
-                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="15"/>
-                                </buttonConfiguration>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bkk-2q-eFO"/>
@@ -632,12 +645,16 @@
                         <outlet property="Reason" destination="r3F-1R-tca" id="0Xw-uc-yOe"/>
                         <outlet property="ToDate" destination="Bhq-1w-zPK" id="6Os-uT-vez"/>
                     </connections>
+                    <navigationItem key="navigationItem" id="mkB-Cb-dUs"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M7V-4p-xxA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7400.0000000000009" y="872.54464285714278"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="d8i-f4-gEJ"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="person" catalog="system" width="128" height="117"/>

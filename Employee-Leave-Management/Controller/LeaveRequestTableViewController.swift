@@ -8,6 +8,8 @@
 import UIKit
 
 class LeaveRequestTableViewController: UITableViewController {
+    
+    var employee:Employee?
 
     override func viewDidLoad() {
         super.viewDidLoad()

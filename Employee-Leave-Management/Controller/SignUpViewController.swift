@@ -18,6 +18,7 @@ class SignUpViewController: UIViewController {
     var imagePicker = UIImagePickerController()
     var profileImage:UIImage?
     var employeeDataManager = EmployeeDataManager()
+    var signUpEmployee:Employee?
     
     @IBAction func BackButtonPressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
@@ -36,18 +37,26 @@ class SignUpViewController: UIViewController {
     
     
     @IBAction func signupButtonPressed(_ sender: Any) {
-        
         let fullName = fullNameInput.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let email = emailInput.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = passwordInput.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let managerBoolean = isManager.isOn
         if let image = profileImage{
-            if((fullName != nil) && (email != nil) && (password != nil)){
+            if((fullName != "") && (email != "") && (password != "")){
                 let employee = employeeDataManager.createEmployee(fullName: fullName!, email: email!, password: password!, profilePicture: image, isManager: managerBoolean)
-                print(employee)
+                signUpEmployee = employee
+                performSegue(withIdentifier: "HomePage", sender: self)
             }
         }
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "HomePage" {
+                let destinationVC = segue.destination as! HomeViewController
+                destinationVC.employee = signUpEmployee
+            }
+        }
     
 }
 

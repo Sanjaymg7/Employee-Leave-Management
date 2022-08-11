@@ -8,6 +8,7 @@
 import UIKit
 
 class ApplyLeavesViewController: UIViewController ,UITextViewDelegate{
+    var employee:Employee?
     let DatePickerPressed = false
     @IBOutlet weak var FromDate: UITextField!
     @IBOutlet weak var ToDate: UITextField!
