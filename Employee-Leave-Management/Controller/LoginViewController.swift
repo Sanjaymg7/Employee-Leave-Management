@@ -8,20 +8,30 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
     
+    let employeeDataManager = EmployeeDataManager()
+    var employeeData:Employee?
+
+    @IBOutlet weak var userEmail: UITextField!
+    @IBOutlet weak var userPassword: UITextField!
 
     @IBAction func LoginButtonPressed(_ sender: UIButton) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let emailLoginViewController = storyBoard.instantiateViewController(withIdentifier: "HomePage")
-        emailLoginViewController.modalPresentationStyle = .fullScreen
-        self.present(emailLoginViewController, animated:true, completion:nil)
+        let enteredEmail = userEmail.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let enteredPassword = userPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        if ((enteredEmail != "") && (enteredPassword != "")){
+            if let employee = employeeDataManager.validateEmployee(email: enteredEmail!, password: enteredPassword!){
+                employeeData = employee
+                performSegue(withIdentifier: "HomePage", sender: self)
+            }
+        }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "HomePage" {
+                let destinationVC = segue.destination as! HomeViewController
+                destinationVC.employee = employeeData
+            }
+        }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)

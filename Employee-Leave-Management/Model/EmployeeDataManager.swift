@@ -22,6 +22,24 @@ struct EmployeeDataManager {
         }
     }
     
+    func getEmployeeById(employeeId:String)->Employee?{
+        let employees = getAllEmployees()
+        let resultEmployee = employees.filter({$0.employeeId==employeeId})
+        if resultEmployee.count == 1{
+            return resultEmployee[0]
+        }
+        return nil
+    }
+    
+    func validateEmployee(email:String,password:String)->Employee?{
+        let employees = getAllEmployees()
+        let reultEmployee = employees.filter({$0.email==email&&$0.password==password})
+        if reultEmployee.count == 1{
+            return reultEmployee[0]
+        }
+        return nil
+    }
+    
     func getManagerID() -> String{
         let employees = getAllEmployees()
         let managers = employees.filter({$0.isManager})
