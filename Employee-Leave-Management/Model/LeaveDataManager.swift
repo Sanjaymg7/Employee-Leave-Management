@@ -44,8 +44,8 @@ struct LeaveDataManager {
     }
 
     
-    mutating func leaveReuests(fromDate:String,toDate:String,reason:String,requestorID:String,managerID:String,status:String)  {
-        let leave = Leave(fromDate: fromDate, toDate: toDate, reason: reason, requestorID:requestorID, managerID: managerID, status: LeaveStatus.applied.rawValue)
+    mutating func leaveReuests(fromDate:String,toDate:String,reason:String,requestorID:String,managerID:String,status:String,requestorName:String)  {
+        let leave = Leave(fromDate: fromDate, toDate: toDate, reason: reason, requestorID:requestorID, requestorName: requestorName, managerID: managerID, status: LeaveStatus.applied.rawValue)
         print(leave)
         postLeaves(leave)
         

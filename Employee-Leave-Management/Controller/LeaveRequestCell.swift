@@ -9,6 +9,13 @@ import UIKit
 
 class LeaveRequestCell: UITableViewCell {
 
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var fromDate: UILabel!
+    @IBOutlet weak var toDate: UILabel!
+    @IBOutlet weak var reason: UILabel!
+    @IBOutlet weak var acceptButton: UIButton!
+    @IBOutlet weak var rejectButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
