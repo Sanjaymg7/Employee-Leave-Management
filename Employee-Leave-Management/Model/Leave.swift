@@ -16,6 +16,7 @@ struct Leave:Codable{
     var toDate:String
     var reason:String
     var requestorID:String
+    var requestorName:String
     var managerID:String
     var status:String
 }

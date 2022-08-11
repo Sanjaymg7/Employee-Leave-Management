@@ -39,14 +39,12 @@ class ApplyLeavesViewController: UIViewController ,UITextViewDelegate{
         datePicker.datePickerMode = .date
     }
     @IBAction func SubmitButtonPressed(_ sender: UIButton) {
-        print(leaveDataManger.getAllLeaves())
         let fromDate = FromDate.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let toDate = ToDate.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let reason = Reason.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         if let currentEmployee = currentEmployee{
-            print("Leave request")
             if((fromDate != "") && (toDate != "")  && (reason != "")){
-                leaveDataManger.leaveReuests(fromDate: fromDate!, toDate: toDate!, reason: reason!, requestorID: currentEmployee.employeeId, managerID: currentEmployee.managerID,status: LeaveStatus.applied.rawValue)
+                leaveDataManger.leaveReuests(fromDate: fromDate!, toDate: toDate!, reason: reason!, requestorID: currentEmployee.employeeId, managerID: currentEmployee.managerID,status: LeaveStatus.applied.rawValue, requestorName: currentEmployee.fullName)
                 dismiss(animated: true, completion: nil)
         }
        
