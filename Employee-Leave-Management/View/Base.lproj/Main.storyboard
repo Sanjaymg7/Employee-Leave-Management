@@ -575,6 +575,14 @@
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="acceptButton" destination="JmR-Yt-mz6" id="DyP-yc-w9g"/>
+                                            <outlet property="fromDate" destination="11N-Hp-cyj" id="mfj-wS-1DU"/>
+                                            <outlet property="reason" destination="pZX-jL-6E8" id="HOy-8Z-tig"/>
+                                            <outlet property="rejectButton" destination="cIS-Zj-Rfb" id="Y9K-7z-UNB"/>
+                                            <outlet property="toDate" destination="FP5-0Q-iP0" id="zJd-Le-W7R"/>
+                                            <outlet property="userName" destination="R5q-rR-Ocl" id="hpM-I1-zgl"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
