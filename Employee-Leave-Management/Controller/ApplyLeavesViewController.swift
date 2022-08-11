@@ -8,7 +8,6 @@
 import UIKit
 
 class ApplyLeavesViewController: UIViewController ,UITextViewDelegate{
-    var employee:Employee?
     let DatePickerPressed = false
     @IBOutlet weak var FromDate: UITextField!
     @IBOutlet weak var ToDate: UITextField!
@@ -44,9 +43,10 @@ class ApplyLeavesViewController: UIViewController ,UITextViewDelegate{
         let fromDate = FromDate.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let toDate = ToDate.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let reason = Reason.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        if let currentEmployee = employee{
+        if let currentEmployee = currentEmployee{
+            print("Leave request")
             if((fromDate != "") && (toDate != "")  && (reason != "")){
-//                let leaveRequest = leaveDataManger.leaveReuests(fromDate: fromDate!, toDate: toDate!, reason: reason!, requestorID: currentEmployee.employeeId, managerID: currentEmployee.managerID,status: LeaveStatus.applied.rawValue)
+                leaveDataManger.leaveReuests(fromDate: fromDate!, toDate: toDate!, reason: reason!, requestorID: currentEmployee.employeeId, managerID: currentEmployee.managerID,status: LeaveStatus.applied.rawValue)
                 dismiss(animated: true, completion: nil)
         }
        

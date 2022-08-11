@@ -28,7 +28,7 @@ struct LeaveDataManager {
     
     func getLeavebyManagerId(managerId:String)->[Leave]{
         let allLeaves = getAllLeaves()
-        return allLeaves.filter({$0.managerID==managerId}).filter({$0.status.rawValue==LeaveStatus.applied.rawValue})
+        return allLeaves.filter({$0.managerID==managerId}).filter({$0.status==LeaveStatus.applied.rawValue})
     }
    
     func postLeaves(_ leave:Leave){
@@ -44,10 +44,10 @@ struct LeaveDataManager {
     }
 
     
-    mutating func leaveReuests(fromDate:String,toDate:String,reason:String,requestorID:String,managerID:String,status:String) -> Leave {
-            let leave = Leave(fromDate: fromDate, toDate: toDate, reason: reason, requestorID:requestorID, managerID: managerID, status: LeaveStatus.applied)
+    mutating func leaveReuests(fromDate:String,toDate:String,reason:String,requestorID:String,managerID:String,status:String)  {
+        let leave = Leave(fromDate: fromDate, toDate: toDate, reason: reason, requestorID:requestorID, managerID: managerID, status: LeaveStatus.applied.rawValue)
+        print(leave)
         postLeaves(leave)
-       return leave
         
     }
 }

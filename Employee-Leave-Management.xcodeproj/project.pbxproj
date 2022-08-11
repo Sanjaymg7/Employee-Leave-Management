@@ -24,6 +24,8 @@
 		A11E6D0328A26D7900725122 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A11E6D0128A26D7900725122 /* LaunchScreen.storyboard */; };
 		A173F25628A4B8A30024262F /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = A173F25528A4B8A30024262F /* Employee.swift */; };
 		A173F25928A4B8C00024262F /* EmployeeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A173F25828A4B8C00024262F /* EmployeeDataManager.swift */; };
+		A173F26428A514160024262F /* LeaveRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A173F26328A514160024262F /* LeaveRequestCell.swift */; };
+		A173F26728A514370024262F /* MyLeavesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A173F26628A514370024262F /* MyLeavesCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		A11E6D0428A26D7900725122 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A173F25528A4B8A30024262F /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		A173F25828A4B8C00024262F /* EmployeeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDataManager.swift; sourceTree = "<group>"; };
+		A173F26328A514160024262F /* LeaveRequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveRequestCell.swift; sourceTree = "<group>"; };
+		A173F26628A514370024262F /* MyLeavesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLeavesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 				5E9A9D2228A3890E00194FEE /* ApplyLeavesViewController.swift */,
 				5EFE6C3228A4FE0C008364B8 /* LeaveReuestViewController.swift */,
 				5EFE6C3428A5024A008364B8 /* MyLeavesViewController.swift */,
+				A173F26328A514160024262F /* LeaveRequestCell.swift */,
+				A173F26628A514370024262F /* MyLeavesCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -197,6 +203,7 @@
 				A1063EAC28A37AE5004C1FE4 /* HomeViewController.swift in Sources */,
 				5EFE6C2F28A4C969008364B8 /* Leave.swift in Sources */,
 				5EFE6C3128A4CA5A008364B8 /* LeaveDataManager.swift in Sources */,
+				A173F26728A514370024262F /* MyLeavesCell.swift in Sources */,
 				A11E6CFB28A26D6E00725122 /* ViewController.swift in Sources */,
 				A11E6CF728A26D6E00725122 /* AppDelegate.swift in Sources */,
 				5EFE6C3328A4FE0C008364B8 /* LeaveReuestViewController.swift in Sources */,
@@ -204,6 +211,7 @@
 				5E9A9D2328A3890E00194FEE /* ApplyLeavesViewController.swift in Sources */,
 				A1063EA828A37AAA004C1FE4 /* SignUpViewController.swift in Sources */,
 				A173F25928A4B8C00024262F /* EmployeeDataManager.swift in Sources */,
+				A173F26428A514160024262F /* LeaveRequestCell.swift in Sources */,
 				A173F25628A4B8A30024262F /* Employee.swift in Sources */,
 				5EFE6C3528A5024A008364B8 /* MyLeavesViewController.swift in Sources */,
 				A1063EAF28A37B27004C1FE4 /* MyManagerViewController.swift in Sources */,
