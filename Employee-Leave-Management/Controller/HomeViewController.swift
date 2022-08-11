@@ -41,9 +41,9 @@ class HomeViewController: UIViewController {
     
     @IBAction func LogoutButtonPressed(_ sender: UIButton) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let LeaveRequestsViewController = storyBoard.instantiateViewController(withIdentifier: "MainPage")
-        LeaveRequestsViewController.modalPresentationStyle = .fullScreen
-        self.present(LeaveRequestsViewController, animated:true, completion:nil)
+        let HomePageViewController = storyBoard.instantiateViewController(withIdentifier: "MainPage")
+        HomePageViewController.modalPresentationStyle = .fullScreen
+        self.present(HomePageViewController, animated:true, completion:nil)
     }
     
 }
