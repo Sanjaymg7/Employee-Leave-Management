@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad10_2" orientation="portrait" layout="fullscreen" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -15,17 +15,17 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="Employee_Leave_Management" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Cmy-7o-jRL">
-                                <rect key="frame" x="0.0" y="20" width="810" height="1060"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8m5-uo-5O8">
-                                        <rect key="frame" x="291" y="0.0" width="228" height="330"/>
+                                        <rect key="frame" x="93" y="0.0" width="228" height="249.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="aMs-bT-706">
-                                                <rect key="frame" x="75" y="147" width="78" height="36"/>
+                                                <rect key="frame" x="75" y="106.5" width="78" height="36"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -38,7 +38,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S6h-MZ-aHx">
-                                        <rect key="frame" x="291" y="365" width="228" height="330"/>
+                                        <rect key="frame" x="93" y="284.5" width="228" height="249"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPK-55-g6u">
                                                 <rect key="frame" x="20" y="20" width="188" height="42"/>
@@ -65,10 +65,10 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bP-69-8hz">
-                                        <rect key="frame" x="309.5" y="730" width="191" height="330"/>
+                                        <rect key="frame" x="111.5" y="568.5" width="191" height="249.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Hz-UV-FEe">
-                                                <rect key="frame" x="52.5" y="144" width="86" height="42"/>
+                                                <rect key="frame" x="52.5" y="104" width="86" height="42"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <state key="normal" title="Sign Up">
                                                     <color key="titleColor" systemColor="labelColor"/>
@@ -111,14 +111,14 @@
             <objects>
                 <viewController storyboardIdentifier="signUp" title="Signup View Controller" modalPresentationStyle="fullScreen" id="wmJ-Yb-uBs" customClass="SignUpViewController" customModule="Employee_Leave_Management" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PPS-OS-h71">
-                        <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="ykF-Ds-2TW">
-                                <rect key="frame" x="0.0" y="20" width="810" height="1060"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4T-Pi-gnK">
-                                        <rect key="frame" x="292" y="0.0" width="226" height="264.5"/>
+                                        <rect key="frame" x="94" y="0.0" width="226" height="204"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="YYx-TX-dlO">
                                                 <rect key="frame" x="20" y="20" width="186" height="47"/>
@@ -131,7 +131,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="arj-LL-39J">
-                                        <rect key="frame" x="259" y="265.5" width="292" height="264"/>
+                                        <rect key="frame" x="61" y="205" width="292" height="203.5"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uTE-BG-y5g">
                                                 <rect key="frame" x="20" y="20" width="249" height="34"/>
@@ -155,7 +155,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTh-dc-bc1">
-                                        <rect key="frame" x="325.5" y="530.5" width="159" height="264.5"/>
+                                        <rect key="frame" x="127.5" y="409.5" width="159" height="204"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="square.and.arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VYt-mE-GBc">
                                                 <rect key="frame" x="20" y="19" width="119" height="100"/>
@@ -166,7 +166,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7l9-ba-32f">
-                                        <rect key="frame" x="325.5" y="796" width="159" height="264"/>
+                                        <rect key="frame" x="127.5" y="614.5" width="159" height="203.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mrd-Un-fX7">
                                                 <rect key="frame" x="20" y="20" width="119" height="40"/>
@@ -195,9 +195,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Io5-Pp-z5T" userLabel="BackButton">
                                 <rect key="frame" x="20" y="58" width="31" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background" image="arrow.backward" catalog="system"/>
-                                </buttonConfiguration>
                                 <connections>
                                     <action selector="backButtonPressed:" destination="wmJ-Yb-uBs" eventType="touchUpInside" id="uEY-MR-GWU"/>
                                     <action selector="backButtonPressed:" destination="rag-bg-fAL" eventType="touchUpInside" id="yIA-be-Ign"/>
@@ -243,14 +240,14 @@
             <objects>
                 <viewController storyboardIdentifier="emailLogin" id="rag-bg-fAL" userLabel="Email login View controller" customClass="LoginViewController" customModule="Employee_Leave_Management" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Upf-84-nPm">
-                        <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="yDY-vu-rFg">
-                                <rect key="frame" x="0.0" y="20" width="810" height="1060"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vmI-ca-tRu">
-                                        <rect key="frame" x="270.5" y="0.0" width="269" height="352.5"/>
+                                        <rect key="frame" x="72.5" y="0.0" width="269" height="272"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="Xha-6W-KMG">
                                                 <rect key="frame" x="20" y="86" width="229" height="58"/>
@@ -263,7 +260,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5rV-8k-uCd">
-                                        <rect key="frame" x="257" y="353.5" width="296" height="353"/>
+                                        <rect key="frame" x="59" y="273" width="296" height="272"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T5t-BN-uNn">
                                                 <rect key="frame" x="20" y="20" width="249" height="34"/>
@@ -281,7 +278,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YHQ-Lw-Yp9">
-                                        <rect key="frame" x="325.5" y="707.5" width="159" height="352.5"/>
+                                        <rect key="frame" x="127.5" y="546" width="159" height="272"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VuI-O8-Q7Q">
                                                 <rect key="frame" x="20" y="20" width="119" height="43"/>
@@ -303,9 +300,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jBL-rf-T92" userLabel="BackButton">
                                 <rect key="frame" x="20" y="58" width="31" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background" image="arrow.backward" catalog="system"/>
-                                </buttonConfiguration>
                                 <connections>
                                     <action selector="backButtonPressed:" destination="rag-bg-fAL" eventType="touchUpInside" id="udb-TB-RmN"/>
                                 </connections>
@@ -331,14 +325,14 @@
             <objects>
                 <viewController storyboardIdentifier="homePage" modalPresentationStyle="fullScreen" id="UTc-hD-Zc0" userLabel="Home View Controller" customClass="HomeViewController" customModule="Employee_Leave_Management" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sme-hB-onY">
-                        <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="133" translatesAutoresizingMaskIntoConstraints="NO" id="L0F-A0-uDp">
-                                <rect key="frame" x="0.0" y="20" width="810" height="1060"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="amp-Da-dV1">
-                                        <rect key="frame" x="269.5" y="0.0" width="271" height="50"/>
+                                        <rect key="frame" x="71.5" y="0.0" width="271" height="0.0"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome Sanjay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="jSa-ST-qGe">
                                                 <rect key="frame" x="20" y="20" width="231" height="57"/>
@@ -350,7 +344,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CXX-9U-9mP">
-                                        <rect key="frame" x="269.5" y="183" width="271" height="877"/>
+                                        <rect key="frame" x="71.5" y="133" width="271" height="685"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDV-cT-BOJ">
                                                 <rect key="frame" x="20" y="20" width="215" height="42"/>
@@ -428,11 +422,11 @@
             <objects>
                 <tableViewController storyboardIdentifier="myLeaves" modalPresentationStyle="fullScreen" id="lKA-VL-Abj" userLabel="My leaves View controller" customClass="MyLeavesTableViewController" customModule="Employee_Leave_Management" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="jXf-ru-hnk">
-                        <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="AYW-iy-O6G">
-                            <rect key="frame" x="0.0" y="0.0" width="810" height="178"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="178"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tuu-fs-7u5" userLabel="Back button">
@@ -445,7 +439,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="My Leaves" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9P-DH-Z3C">
-                                    <rect key="frame" x="331" y="59" width="148" height="61"/>
+                                    <rect key="frame" x="133" y="59" width="148" height="61"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -458,10 +452,10 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="199" id="nfB-F3-Dnp">
-                                <rect key="frame" x="0.0" y="222.5" width="810" height="199"/>
+                                <rect key="frame" x="0.0" y="206" width="414" height="199"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nfB-F3-Dnp" id="Evh-lu-rcD">
-                                    <rect key="frame" x="0.0" y="0.0" width="810" height="199"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="199"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fram Date:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="hzx-6s-F8z">
@@ -511,11 +505,11 @@
             <objects>
                 <tableViewController storyboardIdentifier="leaveRequests" modalPresentationStyle="fullScreen" id="Zg7-KS-8Ma" customClass="LeaveRequestTableViewController" customModule="Employee_Leave_Management" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ygj-dx-zp5">
-                        <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="IFf-jK-clZ">
-                            <rect key="frame" x="0.0" y="0.0" width="810" height="162"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="162"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mrx-lP-JLR" userLabel="Back button">
@@ -528,7 +522,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Leave Requests" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="9mF-nt-ijI">
-                                    <rect key="frame" x="294.5" y="51" width="221.5" height="60"/>
+                                    <rect key="frame" x="96.5" y="51" width="221.5" height="60"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -541,10 +535,10 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="252" id="lzK-lW-abr">
-                                <rect key="frame" x="0.0" y="206.5" width="810" height="252"/>
+                                <rect key="frame" x="0.0" y="190" width="414" height="252"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lzK-lW-abr" id="LMO-oP-Lsv">
-                                    <rect key="frame" x="0.0" y="0.0" width="810" height="252"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="252"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="tAu-Zi-bMc">
@@ -606,14 +600,14 @@
             <objects>
                 <viewController storyboardIdentifier="managerDetails" modalPresentationStyle="fullScreen" id="uWV-cW-87U" userLabel="My Manager View Controller" customClass="MyManagerViewController" customModule="Employee_Leave_Management" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LPS-KW-J40">
-                        <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="cAk-s7-pMI">
-                                <rect key="frame" x="0.0" y="20" width="810" height="1060"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zkn-04-TRm">
-                                        <rect key="frame" x="198" y="0.0" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome Sanjay" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="Fg3-Z4-tI8">
                                                 <rect key="frame" x="52" y="20" width="270" height="68"/>
@@ -626,7 +620,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7XD-oQ-inD">
-                                        <rect key="frame" x="198" y="200" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="150" width="414" height="0.0"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Manager Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vzz-Hh-Tdj">
                                                 <rect key="frame" x="47" y="0.0" width="281" height="87"/>
@@ -639,7 +633,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vuK-aD-imB">
-                                        <rect key="frame" x="198" y="400" width="414" height="660"/>
+                                        <rect key="frame" x="0.0" y="300" width="414" height="518"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Manager Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="qzN-nl-DGr">
                                                 <rect key="frame" x="90" y="58" width="195" height="43"/>
@@ -667,9 +661,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8sc-dM-0Ax" userLabel="BackButton">
                                 <rect key="frame" x="20" y="58" width="31" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background" image="arrow.backward" catalog="system"/>
-                                </buttonConfiguration>
                                 <connections>
                                     <action selector="BackButtonPressed:" destination="uWV-cW-87U" eventType="touchUpInside" id="lpa-kI-cAw"/>
                                     <action selector="backButtonPressed:" destination="rag-bg-fAL" eventType="touchUpInside" id="HGe-ma-mK5"/>
@@ -699,15 +690,12 @@
             <objects>
                 <viewController storyboardIdentifier="applyLeave" modalPresentationStyle="fullScreen" id="nnK-Vk-Mgy" customClass="ApplyLeavesViewController" customModule="Employee_Leave_Management" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mRm-Sl-sWP">
-                        <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VwJ-NO-Tpu" userLabel="BackButton">
                                 <rect key="frame" x="20" y="58" width="31" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background" image="arrow.backward" catalog="system"/>
-                                </buttonConfiguration>
                                 <connections>
                                     <action selector="BackButtonPressed:" destination="nnK-Vk-Mgy" eventType="touchUpInside" id="5wc-ds-R70"/>
                                     <action selector="BackButtonPressed:" destination="uWV-cW-87U" eventType="touchUpInside" id="bkT-gf-doQ"/>
@@ -716,10 +704,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="VjD-XL-fzL">
-                                <rect key="frame" x="0.0" y="20" width="810" height="1060"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xVv-E8-Gkn">
-                                        <rect key="frame" x="281.5" y="0.0" width="247" height="50"/>
+                                        <rect key="frame" x="83.5" y="0.0" width="247" height="0.0"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Apply Leave" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="bEl-E2-zXe">
                                                 <rect key="frame" x="20" y="20" width="207" height="48"/>
@@ -732,7 +720,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F7Y-Ps-W1N">
-                                        <rect key="frame" x="218" y="150" width="374" height="910"/>
+                                        <rect key="frame" x="20" y="100" width="374" height="718"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="From Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2yk-WH-Zm4">
                                                 <rect key="frame" x="92" y="44" width="190" height="34"/>
@@ -757,10 +745,6 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" name="AccentColor"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Submit">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
-                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </buttonConfiguration>
                                             </button>
                                         </subviews>
                                     </view>
