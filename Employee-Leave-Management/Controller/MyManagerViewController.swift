@@ -14,14 +14,12 @@ class MyManagerViewController: UIViewController {
     @IBOutlet weak var managerEmailLabel: UILabel!
     @IBOutlet weak var managerProfilePicture: UIImageView!
     var employeeDataManager = EmployeeDataManager()
-    
-    var employee:Employee?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let currentEmployee = employee{
-            userWelcomeLabel.text = "Welcome \(currentEmployee.fullName)"
-            let employeeManager = employeeDataManager.getEmployeeById(employeeId: currentEmployee.managerID)
+        if let employee = currentEmployee{
+            userWelcomeLabel.text = "Welcome \(employee.fullName)"
+            let employeeManager = employeeDataManager.getEmployeeById(employeeId: employee.managerID)
             if let manager = employeeManager{
                 managerNameLabel.text = manager.fullName
                 managerEmailLabel.text = manager.email
