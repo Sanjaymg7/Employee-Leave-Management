@@ -19,6 +19,9 @@ class SignUpViewController: UIViewController {
     var profileImage:UIImage?
     var employeeDataManager = EmployeeDataManager()
     
+    @IBAction func BackButtonPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func uploadProfilePictureClicked(_ sender: Any) {
         
@@ -58,5 +61,6 @@ extension SignUpViewController:UIImagePickerControllerDelegate, UINavigationCont
         }
         self.dismiss(animated: true, completion: nil)
     }
+    
     
 }

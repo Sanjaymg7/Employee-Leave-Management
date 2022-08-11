@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         self.present(emailLoginViewController, animated:true, completion:nil)
     }
    
-    
+   
     @IBAction func signUpPressed(_ sender: UIButton) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let signUpViewController = storyBoard.instantiateViewController(withIdentifier: "signUp")
