@@ -8,6 +8,7 @@
 import UIKit
 
 class ApplyLeavesViewController: UIViewController {
+    var employee:Employee?
 
     override func viewDidLoad() {
         super.viewDidLoad()
