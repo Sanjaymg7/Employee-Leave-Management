@@ -11,19 +11,16 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var leaveRequestButton: UIButton!
     @IBOutlet weak var welcomeUserLabel: UILabel!
-    var employee:Employee?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let currentEmployee = employee{
-            welcomeUserLabel.text = "Welcome \(currentEmployee.fullName)"
-            if !currentEmployee.isManager{
+        if let employee = currentEmployee{
+            welcomeUserLabel.text = "Welcome \(employee.fullName)"
+            if !employee.isManager{
                 leaveRequestButton.isHidden = true
             }
         }
     }
-    
-
     
     @IBAction func ApplyLeaveButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "ApplyLeavePage", sender: self)
@@ -48,30 +45,5 @@ class HomeViewController: UIViewController {
         HomePageViewController.modalPresentationStyle = .fullScreen
         self.present(HomePageViewController, animated:true, completion:nil)
     }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "ApplyLeavePage" {
-                let destinationVC = segue.destination as! ApplyLeavesViewController
-                if let currentEmployee = employee{
-                    destinationVC.employee = currentEmployee
-                }
-            }else if segue.identifier == "MyLeavesPage" {
-                let destinationVC = segue.destination as! MyLeavesViewController
-                if let currentEmployee = employee{
-//                    destinationVC.employee = currentEmployee
-                }
-            }else if segue.identifier == "MyManagerPage" {
-                let destinationVC = segue.destination as! MyManagerViewController
-                if let currentEmployee = employee{
-                    destinationVC.employee = currentEmployee
-                }
-            }else if segue.identifier == "LeaveRequestsPage" {
-                let destinationVC = segue.destination as! LeaveReuestViewController
-                if let currentEmployee = employee{
-//                    destinationVC.employee = currentEmployee
-                }
-            }
-        }
     
 }
