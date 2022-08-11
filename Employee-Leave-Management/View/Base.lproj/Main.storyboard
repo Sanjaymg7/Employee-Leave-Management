@@ -603,6 +603,9 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="SubmitButtonPressed:" destination="nnK-Vk-Mgy" eventType="touchUpInside" id="Ans-Kz-vnT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cS-sY-6uk" userLabel="BackButton">
                                 <rect key="frame" x="20" y="58" width="31" height="20"/>
@@ -624,6 +627,11 @@
                         <viewLayoutGuide key="safeArea" id="Bkk-2q-eFO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="FromDate" destination="2yk-WH-Zm4" id="35u-1b-Nvn"/>
+                        <outlet property="Reason" destination="r3F-1R-tca" id="0Xw-uc-yOe"/>
+                        <outlet property="ToDate" destination="Bhq-1w-zPK" id="6Os-uT-vez"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M7V-4p-xxA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
