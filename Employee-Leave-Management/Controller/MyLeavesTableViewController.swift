@@ -86,4 +86,7 @@ class MyLeavesTableViewController: UITableViewController {
     }
     */
 
+    @IBAction func BackButtonPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
 }
