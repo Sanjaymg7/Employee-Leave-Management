@@ -41,7 +41,7 @@ extension MyLeavesViewController:UITableViewDataSource,UITableViewDelegate{
         MyLeavesCell.fromDate.text = myLeaves[indexPath.row].fromDate
         MyLeavesCell.toDate.text = myLeaves[indexPath.row].toDate
         MyLeavesCell.reason.text = myLeaves[indexPath.row].reason
-        MyLeavesCell.reason.text = myLeaves[indexPath.row].status
+        MyLeavesCell.status.text = myLeaves[indexPath.row].status
        return MyLeavesCell
     }
     
