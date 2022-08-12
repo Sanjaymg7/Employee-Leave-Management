@@ -8,7 +8,10 @@
 import UIKit
 
 class MyLeavesCell: UITableViewCell {
-
+    @IBOutlet weak var fromDate: UILabel!
+    @IBOutlet weak var toDate: UILabel!
+    @IBOutlet weak var reason: UILabel!
+    @IBOutlet weak var status:UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

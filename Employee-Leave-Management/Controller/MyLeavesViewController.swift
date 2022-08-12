@@ -9,9 +9,13 @@ import UIKit
 
 class MyLeavesViewController: UIViewController {
     @IBOutlet weak var table:UITableView!
+    var leaveDataManager = LeaveDataManager()
+    var myLeaves:[Leave] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let employee = currentEmployee{
+            myLeaves = leaveDataManager.getLeavebyManagerId(managerId: employee.employeeId)
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -26,4 +30,24 @@ class MyLeavesViewController: UIViewController {
         HomePageViewController.modalPresentationStyle = .fullScreen
         self.present(HomePageViewController, animated:true, completion:nil)
     }
+}
+extension MyLeavesViewController:UITableViewDataSource,UITableViewDelegate{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return myLeaves.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let MyLeavesCell = table.dequeueReusableCell(withIdentifier: "MyLeavesCell", for: indexPath) as! MyLeavesCell
+        MyLeavesCell.fromDate.text = myLeaves[indexPath.row].fromDate
+        MyLeavesCell.toDate.text = myLeaves[indexPath.row].toDate
+        MyLeavesCell.reason.text = myLeaves[indexPath.row].reason
+        MyLeavesCell.reason.text = myLeaves[indexPath.row].status
+       return MyLeavesCell
+    }
+    
+    
+    
+   
+
+
 }
