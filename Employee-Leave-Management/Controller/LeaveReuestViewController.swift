@@ -6,11 +6,12 @@
 //
 
 import UIKit
+var leaveDataManager = LeaveDataManager()
 
-class LeaveReuestViewController: UIViewController {
+class LeaveReuestViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet weak var table:UITableView!
-    var leaveDataManager = LeaveDataManager()
-    var leaveRequests:[Leave] = []
+//    var leaveDataManager = LeaveDataManager()
+    var leaveRequests:[Leave] = leaveDataManager.getLeavebyManagerId(managerId: currentEmployee!.employeeId)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,10 +42,9 @@ class LeaveReuestViewController: UIViewController {
         HomePageViewController.modalPresentationStyle = .fullScreen
         self.present(HomePageViewController, animated:true, completion:nil)
     }
-}
-
-extension LeaveReuestViewController:UITableViewDataSource,UITableViewDelegate{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(leaveRequests.count)
         return leaveRequests.count
     }
 
@@ -54,10 +54,10 @@ extension LeaveReuestViewController:UITableViewDataSource,UITableViewDelegate{
         leaveRequestCell.fromDate.text = leaveRequests[indexPath.row].fromDate
         leaveRequestCell.toDate.text = leaveRequests[indexPath.row].toDate
         leaveRequestCell.reason.text = leaveRequests[indexPath.row].reason
-        leaveRequestCell.acceptButton.tag = indexPath.row
-        leaveRequestCell.acceptButton.addTarget(self, action: #selector(acceptLeaveRequest), for: .touchUpInside)
-        leaveRequestCell.rejectButton.tag = indexPath.row
-        leaveRequestCell.rejectButton.addTarget(self, action: #selector(rejectLeaveRequest), for: .touchUpInside)
+//        leaveRequestCell.acceptButton.tag = indexPath.row
+//        leaveRequestCell.acceptButton.addTarget(self, action: #selector(acceptLeaveRequest), for: .touchUpInside)
+//        leaveRequestCell.rejectButton.tag = indexPath.row
+//        leaveRequestCell.rejectButton.addTarget(self, action: #selector(rejectLeaveRequest), for: .touchUpInside)
         return leaveRequestCell
     }
     
@@ -72,6 +72,4 @@ extension LeaveReuestViewController:UITableViewDataSource,UITableViewDelegate{
         let selectedLeave = leaveRequests[indexPath.row]
         print(selectedLeave)
     }
-
-
 }
