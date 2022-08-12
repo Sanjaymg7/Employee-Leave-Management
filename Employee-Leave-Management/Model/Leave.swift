@@ -12,6 +12,7 @@ enum LeaveStatus:String,Codable{
     case applied="applied"
 }
 struct Leave:Codable{
+    var leaveId:String
     var fromDate:String
     var toDate:String
     var reason:String

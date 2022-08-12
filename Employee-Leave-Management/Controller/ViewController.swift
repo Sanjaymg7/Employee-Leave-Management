@@ -8,15 +8,10 @@
 import UIKit
 
 var currentEmployee:Employee?
+var employeeDataManager = EmployeeDataManager()
+var leaveDataManager = LeaveDataManager()
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        //mainviewcontroller
-    }
-
 
     @IBAction func emailButtonPressed(_ sender: UIButton) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)

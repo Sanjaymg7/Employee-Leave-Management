@@ -8,8 +8,6 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    
-    let employeeDataManager = EmployeeDataManager()
 
     @IBOutlet weak var userEmail: UITextField!
     @IBOutlet weak var userPassword: UITextField!
