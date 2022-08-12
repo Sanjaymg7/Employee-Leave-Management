@@ -36,8 +36,8 @@ struct LeaveDataManager {
         leaves.append(leave)
         do{
             let encoder = JSONEncoder()
-            let leaveReuestSchema = try encoder.encode(leaves)
-            leaveReuestDefaults.setValue(leaveReuestSchema, forKey: "leaveReuestDB")
+            let leaveRequestSchemaData = try encoder.encode(leaves)
+            leaveReuestDefaults.setValue(leaveRequestSchemaData, forKey: "leaveReuestDB")
         }catch let err{
             print(err)
         }
