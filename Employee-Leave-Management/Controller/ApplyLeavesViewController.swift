@@ -13,7 +13,7 @@ class ApplyLeavesViewController: UIViewController ,UITextViewDelegate{
     @IBOutlet weak var ToDate: UITextField!
     @IBOutlet weak var Reason: UITextField!
     let datePicker = UIDatePicker()
-    var leaveDataManger = LeaveDataManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         createDatePicker()
@@ -44,7 +44,7 @@ class ApplyLeavesViewController: UIViewController ,UITextViewDelegate{
         let reason = Reason.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         if let currentEmployee = currentEmployee{
             if((fromDate != "") && (toDate != "")  && (reason != "")){
-                leaveDataManger.leaveReuests(fromDate: fromDate!, toDate: toDate!, reason: reason!, requestorID: currentEmployee.employeeId, managerID: currentEmployee.managerID,status: LeaveStatus.applied.rawValue, requestorName: currentEmployee.fullName)
+                leaveDataManager.leaveRequests(fromDate: fromDate!, toDate: toDate!, reason: reason!, requestorID: currentEmployee.employeeId, managerID: currentEmployee.managerID,status: LeaveStatus.applied.rawValue, requestorName: currentEmployee.fullName)
                 dismiss(animated: true, completion: nil)
         }
        
