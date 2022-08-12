@@ -13,7 +13,6 @@ class MyManagerViewController: UIViewController {
     @IBOutlet weak var managerNameLabel: UILabel!
     @IBOutlet weak var managerEmailLabel: UILabel!
     @IBOutlet weak var managerProfilePicture: UIImageView!
-    var employeeDataManager = EmployeeDataManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -8,15 +8,15 @@
 import UIKit
 
 class MyLeavesViewController: UIViewController {
+    
     @IBOutlet weak var table:UITableView!
-    var leaveDataManager = LeaveDataManager()
     var myLeaves:[Leave] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let employee = currentEmployee{
-            myLeaves = leaveDataManager.getLeavebyManagerId(managerId: employee.employeeId)
+            myLeaves = leaveDataManager.getLeavebyEmployeeId(employeeId: employee.employeeId)
         }
-        // Do any additional setup after loading the view.
     }
     
 
@@ -32,6 +32,7 @@ class MyLeavesViewController: UIViewController {
     }
 }
 extension MyLeavesViewController:UITableViewDataSource,UITableViewDelegate{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myLeaves.count
     }
@@ -41,13 +42,8 @@ extension MyLeavesViewController:UITableViewDataSource,UITableViewDelegate{
         MyLeavesCell.fromDate.text = myLeaves[indexPath.row].fromDate
         MyLeavesCell.toDate.text = myLeaves[indexPath.row].toDate
         MyLeavesCell.reason.text = myLeaves[indexPath.row].reason
-        MyLeavesCell.reason.text = myLeaves[indexPath.row].status
+        MyLeavesCell.status.text = myLeaves[indexPath.row].status
        return MyLeavesCell
     }
-    
-    
-    
-   
-
 
 }
