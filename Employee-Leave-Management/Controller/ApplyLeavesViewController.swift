@@ -74,4 +74,11 @@ class ApplyLeavesViewController: UIViewController ,UITextViewDelegate{
         
         self.view.endEditing(true)
     }
+    
+    @IBAction func LogoutButtonPressed(_ sender: UIButton) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let HomePageViewController = storyBoard.instantiateViewController(withIdentifier: "MainPage")
+        HomePageViewController.modalPresentationStyle = .fullScreen
+        self.present(HomePageViewController, animated:true, completion:nil)
+    }
 }
