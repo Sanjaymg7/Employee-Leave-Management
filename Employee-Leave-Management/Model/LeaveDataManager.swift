@@ -11,13 +11,14 @@ let leaveRequestDefaults = UserDefaults.standard
 
 struct LeaveDataManager {
     
-    func setLeaveData(leaveData:[Leave]){
+    func setLeaveData(leaveData:[Leave]) -> Bool{
         do{
             let encoder = JSONEncoder()
             let leaveRequestSchemaData = try encoder.encode(leaveData)
             leaveRequestDefaults.setValue(leaveRequestSchemaData, forKey: "leaveRequestDB")
-        }catch let err{
-            print(err)
+            return true
+        }catch{
+            return false
         }
     }
     
@@ -54,20 +55,20 @@ struct LeaveDataManager {
                 allLeaves[index].status = isAccepted ? LeaveStatus.accepted.rawValue : LeaveStatus.rejected.rawValue
             }
         }
-        setLeaveData(leaveData: allLeaves)
+        let _ = setLeaveData(leaveData: allLeaves)
     }
    
-    func postLeaves(_ leave:Leave){
+    func postLeaves(_ leave:Leave) -> Bool{
         var leaves = getAllLeaves()
         leaves.append(leave)
-        setLeaveData(leaveData: leaves)
+        return setLeaveData(leaveData: leaves)
     }
 
     
-    mutating func leaveRequests(fromDate:String,toDate:String,reason:String,requestorID:String,managerID:String,status:String,requestorName:String)  {
+    mutating func leaveRequests(fromDate:String,toDate:String,reason:String,requestorID:String,managerID:String,status:String,requestorName:String) -> Leave?  {
         let leave = Leave(leaveId: "\(requestorID)\(managerID)\(Int.random(in: 1000...9999))", fromDate: fromDate, toDate: toDate, reason: reason, requestorID:requestorID, requestorName: requestorName, managerID: managerID, status: LeaveStatus.applied.rawValue)
-        postLeaves(leave)
-        
+        let isLeaveCreated = postLeaves(leave)
+        return isLeaveCreated ? leave : nil
     }
 }
 

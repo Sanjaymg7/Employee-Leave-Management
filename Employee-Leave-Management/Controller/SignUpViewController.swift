@@ -42,8 +42,10 @@ class SignUpViewController: UIViewController {
         if let image = profileImage{
             if((fullName != "") && (email != "") && (password != "")){
                 let employee = employeeDataManager.createEmployee(fullName: fullName!, email: email!, password: password!, profilePicture: image, isManager: managerBoolean)
-                currentEmployee = employee
-                performSegue(withIdentifier: "HomePage", sender: self)
+                if let createdEmployee = employee{
+                    currentEmployee = createdEmployee
+                    performSegue(withIdentifier: "HomePage", sender: self)
+                }
             }
         }
     }
