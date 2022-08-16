@@ -19,6 +19,10 @@ class LoginViewController: UIViewController {
             if let employee = employeeDataManager.validateEmployee(email: enteredEmail!, password: enteredPassword!){
                 currentEmployee = employee
                 performSegue(withIdentifier: "HomePage", sender: self)
+            }else{
+                let alert = UIAlertController(title: "Alert\n", message: "User Not Found!!", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }
