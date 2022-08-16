@@ -40,7 +40,7 @@ class ApplyLeavesViewController: UIViewController ,UITextViewDelegate{
         let reason = Reason.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         if let currentEmployee = currentEmployee{
             if((fromDate != "") && (toDate != "")  && (reason != "")){
-                let leave = leaveDataManager.leaveRequests(fromDate: fromDate!, toDate: toDate!, reason: reason!, requestorID: currentEmployee.employeeId, managerID: currentEmployee.managerID,status: LeaveStatus.applied.rawValue, requestorName: currentEmployee.fullName)
+                let leave = try! leaveDataManager.leaveRequests(fromDate: fromDate!, toDate: toDate!, reason: reason!, requestorID: currentEmployee.employeeId, managerID: currentEmployee.managerID,status: LeaveStatus.applied.rawValue, requestorName: currentEmployee.fullName)
                 if let _ = leave{
                     dismiss(animated: true, completion: nil)
                 }else{

@@ -43,7 +43,7 @@ class SignUpViewController: UIViewController {
         let managerBoolean = isManager.isOn
         if let image = profileImage{
             if((fullName != "") && (email != "") && (password != "")){
-                let employee = employeeDataManager.createEmployee(fullName: fullName!, email: email!, password: password!, profilePicture: image, isManager: managerBoolean)
+                let employee = try! employeeDataManager.createEmployee(fullName: fullName!, email: email!, password: password!, profilePicture: image, isManager: managerBoolean)
                 if let createdEmployee = employee{
                     currentEmployee = createdEmployee
                     profileImage = nil
