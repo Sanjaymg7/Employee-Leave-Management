@@ -13,6 +13,6 @@ struct Employee:Codable {
     var email:String
     var isManager:Bool
     var password:String
-    var profilePicture:Data
+    var profilePicture:String
     var managerID:String
 }

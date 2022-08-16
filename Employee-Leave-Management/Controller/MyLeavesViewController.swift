@@ -9,6 +9,8 @@ import UIKit
 
 class MyLeavesViewController: UIViewController {
     
+    let leaveDataManager = LeaveDataManager()
+    
     @IBOutlet weak var table:UITableView!
     var myLeaves:[Leave] = []
     
@@ -25,10 +27,7 @@ class MyLeavesViewController: UIViewController {
     }
     
     @IBAction func LogoutButtonPressed(_ sender: UIButton) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let HomePageViewController = storyBoard.instantiateViewController(withIdentifier: "MainPage")
-        HomePageViewController.modalPresentationStyle = .fullScreen
-        self.present(HomePageViewController, animated:true, completion:nil)
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
     }
 }
 extension MyLeavesViewController:UITableViewDataSource,UITableViewDelegate{
@@ -42,7 +41,7 @@ extension MyLeavesViewController:UITableViewDataSource,UITableViewDelegate{
         MyLeavesCell.fromDate.text = myLeaves[indexPath.row].fromDate
         MyLeavesCell.toDate.text = myLeaves[indexPath.row].toDate
         MyLeavesCell.reason.text = myLeaves[indexPath.row].reason
-        MyLeavesCell.status.text = myLeaves[indexPath.row].status
+        MyLeavesCell.status.text = myLeaves[indexPath.row].status.rawValue
        return MyLeavesCell
     }
 

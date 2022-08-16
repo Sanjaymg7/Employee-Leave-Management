@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -39,7 +39,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="emailButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TSQ-6y-UFo"/>
+                                            <segue destination="rag-bg-fAL" kind="show" id="KFh-X9-w0F"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mG1-Mn-tZy">
@@ -71,7 +71,7 @@
                                     <color key="titleColor" red="0.92941176470588238" green="0.90196078431372551" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="signUpPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="scX-YW-OMP"/>
+                                    <segue destination="wmJ-Yb-uBs" kind="show" id="mGU-ZB-JBN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -261,7 +261,7 @@
         <!--Email login View controller-->
         <scene sceneID="ESR-nl-Fby">
             <objects>
-                <viewController storyboardIdentifier="emailLogin" id="rag-bg-fAL" userLabel="Email login View controller" customClass="LoginViewController" customModule="Employee_Leave_Management" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="emailLogin" modalPresentationStyle="fullScreen" id="rag-bg-fAL" userLabel="Email login View controller" customClass="LoginViewController" customModule="Employee_Leave_Management" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Upf-84-nPm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -376,7 +376,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="MyLeaveButtonPressed:" destination="UTc-hD-Zc0" eventType="touchUpInside" id="u9i-EX-KAo"/>
+                                    <segue destination="qQC-pZ-d7Y" kind="show" id="EZ1-L8-pXr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1S-1Z-bb1">
@@ -395,7 +395,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="MyManagerButtonPressed:" destination="UTc-hD-Zc0" eventType="touchUpInside" id="BBH-d5-nWy"/>
+                                    <segue destination="uWV-cW-87U" kind="show" id="vtd-cc-JUi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDV-cT-BOJ">
@@ -414,7 +414,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="ApplyLeaveButtonPressed:" destination="UTc-hD-Zc0" eventType="touchUpInside" id="I79-KR-HHi"/>
+                                    <segue destination="nnK-Vk-Mgy" kind="show" id="V8g-lh-dRe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3d-PG-ycv">
@@ -446,7 +446,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="LeaveRequestsButtonPressed:" destination="UTc-hD-Zc0" eventType="touchUpInside" id="UgX-nB-aBL"/>
+                                    <segue destination="r2h-rT-WMp" kind="show" id="tbA-wO-MgY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -473,10 +473,6 @@
                     <connections>
                         <outlet property="leaveRequestButton" destination="oTA-HO-1qE" id="n7p-NY-Jm1"/>
                         <outlet property="welcomeUserLabel" destination="jSa-ST-qGe" id="us1-G0-LP5"/>
-                        <segue destination="uWV-cW-87U" kind="show" identifier="MyManagerPage" id="F2B-nY-xUp"/>
-                        <segue destination="nnK-Vk-Mgy" kind="show" identifier="ApplyLeavePage" id="hur-jh-SmA"/>
-                        <segue destination="r2h-rT-WMp" kind="show" identifier="LeaveRequestsPage" id="kSo-hT-I6B"/>
-                        <segue destination="qQC-pZ-d7Y" kind="show" identifier="MyLeavesPage" id="dgf-eB-HOV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EcU-2M-LYV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -519,7 +515,7 @@
                                 <color key="backgroundColor" red="0.25490196079999999" green="0.49019607840000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyLeavesCell" rowHeight="236" id="FSh-Jh-FYy" customClass="MyLeavesCell" customModule="Employee_Leave_Management" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="414" height="236"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="236"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FSh-Jh-FYy" id="NWG-JP-IrB">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="236"/>
@@ -658,7 +654,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OD8-6l-kXA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7944.9275362318849" y="1328.5714285714284"/>
+            <point key="canvasLocation" x="9152" y="-413"/>
         </scene>
         <!--Leave Reuest View Controller-->
         <scene sceneID="fDQ-dV-dAw">
@@ -705,7 +701,7 @@
                                 <color key="backgroundColor" red="0.25490196079999999" green="0.49019607840000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LeaveReuestCell" rowHeight="265" id="dNU-qG-CsQ" customClass="LeaveRequestCell" customModule="Employee_Leave_Management" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="414" height="265"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="265"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dNU-qG-CsQ" id="9Fk-x8-4O7">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="265"/>
@@ -869,7 +865,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="74D-nt-ZSb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6857.971014492754" y="1309.8214285714284"/>
+            <point key="canvasLocation" x="8077" y="684"/>
         </scene>
         <!--My Manager View Controller-->
         <scene sceneID="wAE-TG-Vhd">
@@ -975,7 +971,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LwK-WX-eCL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9648" y="1310"/>
+            <point key="canvasLocation" x="9151" y="267"/>
         </scene>
         <!--Apply Leaves View Controller-->
         <scene sceneID="i4N-4G-tcp">
@@ -1099,7 +1095,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M7V-4p-xxA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8821.7391304347839" y="1309.8214285714284"/>
+            <point key="canvasLocation" x="8077" y="-661"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

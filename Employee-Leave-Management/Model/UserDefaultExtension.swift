@@ -10,6 +10,7 @@ import Foundation
 extension UserDefaults{
     
     func setAppData<T:Codable>(data:[T],dataKey:String) -> Bool {
+        let appUserDefaults = UserDefaults.standard
         do{
             let encoder = JSONEncoder()
             let encodedData = try encoder.encode(data)
@@ -21,6 +22,7 @@ extension UserDefaults{
     }
     
     func getAppData<T:Codable>(dataKey:String) -> [T]{
+        let appUserDefaults = UserDefaults.standard
         guard let schemaData = appUserDefaults.object(forKey: dataKey) as? Data else{return []}
         do{
             let decoder = JSONDecoder()

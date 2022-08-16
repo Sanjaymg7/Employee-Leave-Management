@@ -8,7 +8,10 @@
 import UIKit
 
 class ApplyLeavesViewController: UIViewController ,UITextViewDelegate{
+    
     let DatePickerPressed = false
+    var leaveDataManager = LeaveDataManager()
+    
     @IBOutlet weak var FromDate: UITextField!
     @IBOutlet weak var ToDate: UITextField!
     @IBOutlet weak var Reason: UITextField!
@@ -40,6 +43,10 @@ class ApplyLeavesViewController: UIViewController ,UITextViewDelegate{
                 let leave = leaveDataManager.leaveRequests(fromDate: fromDate!, toDate: toDate!, reason: reason!, requestorID: currentEmployee.employeeId, managerID: currentEmployee.managerID,status: LeaveStatus.applied.rawValue, requestorName: currentEmployee.fullName)
                 if let _ = leave{
                     dismiss(animated: true, completion: nil)
+                }else{
+                    let alert = UIAlertController(title: "Alert\n", message: "Something Went Wrong!!", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
                 }
                 
             }
@@ -67,10 +74,7 @@ class ApplyLeavesViewController: UIViewController ,UITextViewDelegate{
     }
     
     @IBAction func LogoutButtonPressed(_ sender: UIButton) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let HomePageViewController = storyBoard.instantiateViewController(withIdentifier: "MainPage")
-        HomePageViewController.modalPresentationStyle = .fullScreen
-        self.present(HomePageViewController, animated:true, completion:nil)
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
     }
     
 }
