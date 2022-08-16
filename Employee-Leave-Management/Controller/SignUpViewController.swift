@@ -9,6 +9,8 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
+    let employeeDataManager = EmployeeDataManager()
+    
     @IBOutlet weak var fullNameInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var emailInput: UITextField!
@@ -44,6 +46,8 @@ class SignUpViewController: UIViewController {
                 let employee = employeeDataManager.createEmployee(fullName: fullName!, email: email!, password: password!, profilePicture: image, isManager: managerBoolean)
                 if let createdEmployee = employee{
                     currentEmployee = createdEmployee
+                    profileImage = nil
+                    profilePictureImage.image = nil
                     performSegue(withIdentifier: "HomePage", sender: self)
                 }else{
                     let alert = UIAlertController(title: "Alert\n", message: "Something Went Wrong!!", preferredStyle: UIAlertController.Style.alert)

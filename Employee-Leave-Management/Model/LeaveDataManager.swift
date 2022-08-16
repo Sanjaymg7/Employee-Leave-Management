@@ -9,6 +9,8 @@ import Foundation
 
 struct LeaveDataManager {
     
+    let appUserDefaults = UserDefaults.standard
+    
     func removeAllLeaveRequests(){
         appUserDefaults.removeObject(forKey: "leaveRequestDB")
     }
@@ -20,14 +22,14 @@ struct LeaveDataManager {
     
     func getLeavebyManagerId(managerId:String)->[Leave]{
         let allLeaves:[Leave] = appUserDefaults.getAppData(dataKey: "leaveRequestDB")
-        return allLeaves.filter({$0.managerID==managerId}).filter({$0.status==LeaveStatus.applied.rawValue})
+        return allLeaves.filter({$0.managerID==managerId}).filter({$0.status==LeaveStatus.applied})
     }
     
     func leaveAction(leaveId:String, isAccepted:Bool)->Bool{
         var allLeaves:[Leave] = appUserDefaults.getAppData(dataKey: "leaveRequestDB")
         for index in 0...allLeaves.count-1{
             if allLeaves[index].leaveId == leaveId{
-                allLeaves[index].status = isAccepted ? LeaveStatus.accepted.rawValue : LeaveStatus.rejected.rawValue
+                allLeaves[index].status = isAccepted ? LeaveStatus.accepted : LeaveStatus.rejected
             }
         }
         return appUserDefaults.setAppData(data: allLeaves, dataKey: "leaveRequestDB")
@@ -41,7 +43,7 @@ struct LeaveDataManager {
 
     
     mutating func leaveRequests(fromDate:String,toDate:String,reason:String,requestorID:String,managerID:String,status:String,requestorName:String) -> Leave?  {
-        let leave = Leave(leaveId: "\(requestorID)\(managerID)\(Int.random(in: 1000...9999))", fromDate: fromDate, toDate: toDate, reason: reason, requestorID:requestorID, requestorName: requestorName, managerID: managerID, status: LeaveStatus.applied.rawValue)
+        let leave = Leave(leaveId: "\(requestorID)\(managerID)\(Int.random(in: 1000...9999))", fromDate: fromDate, toDate: toDate, reason: reason, requestorID:requestorID, requestorName: requestorName, managerID: managerID, status: LeaveStatus.applied)
         let isLeaveCreated = postLeaves(leave)
         return isLeaveCreated ? leave : nil
     }
