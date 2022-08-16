@@ -21,7 +21,7 @@ class MyManagerViewController: UIViewController {
         super.viewDidLoad()
         if let employee = currentEmployee{
             userWelcomeLabel.text = "Welcome \(employee.fullName)"
-            let employeeManager = employeeDataManager.getEmployeeById(employeeId: employee.managerID)
+            let employeeManager =  try! employeeDataManager.getEmployeeById(employeeId: employee.managerID)
             if let manager = employeeManager{
                 managerNameLabel.text = manager.fullName
                 managerEmailLabel.text = manager.email

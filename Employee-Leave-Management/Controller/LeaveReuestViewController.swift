@@ -17,7 +17,7 @@ class LeaveReuestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let employee = currentEmployee{
-            leaveRequests = leaveDataManager.getLeavebyManagerId(managerId: employee.employeeId)
+            leaveRequests = try! leaveDataManager.getLeavebyManagerId(managerId: employee.employeeId)
         }
     }
     
@@ -54,7 +54,7 @@ extension LeaveReuestViewController:UITableViewDataSource,UITableViewDelegate{
         if let button = sender.titleLabel?.text{
             let indexPath = IndexPath(row: sender.tag, section: 0)
             let selectedLeave = leaveRequests[indexPath.row]
-            let response = leaveDataManager.leaveAction(leaveId: selectedLeave.leaveId, isAccepted: button == "Accept" ? true : false)
+            let response = try! leaveDataManager.leaveAction(leaveId: selectedLeave.leaveId, isAccepted: button == "Accept" ? true : false)
             if response {
                 leaveRequests.remove(at: indexPath.row)
                 table.reloadData()
