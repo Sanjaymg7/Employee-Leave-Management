@@ -9,7 +9,7 @@ import UIKit
 
 struct EmployeeDataManager {
     
-    func getEmployeeById(employeeId:String)->Employee?{
+    func getEmployeeById(employeeId:String)throws->Employee?{
         let employees:[Employee] = appUserDefaults.getAppData(dataKey: "employeeDB")
         let resultEmployee = employees.filter({$0.employeeId==employeeId})
         if resultEmployee.count == 1{
@@ -22,7 +22,7 @@ struct EmployeeDataManager {
         appUserDefaults.removeObject(forKey: "employeeDB")
     }
     
-    func validateEmployee(email:String,password:String)->Employee?{
+    func validateEmployee(email:String,password:String)throws->Employee?{
         let employees:[Employee] = appUserDefaults.getAppData(dataKey: "employeeDB")
         let reultEmployee = employees.filter({$0.email==email&&$0.password==password})
         if reultEmployee.count == 1{
@@ -31,7 +31,7 @@ struct EmployeeDataManager {
         return nil
     }
     
-    func getManagerID() -> String{
+    func getManagerID() throws-> String{
         let employees:[Employee] = appUserDefaults.getAppData(dataKey: "employeeDB")
         let managers = employees.filter({$0.isManager})
         if managers.count>0{
@@ -41,27 +41,27 @@ struct EmployeeDataManager {
         return ""
     }
     
-    func addEmployee(_ employee:Employee)->Bool{
+    func addEmployee(_ employee:Employee)throws->Bool{
         var employees:[Employee] = appUserDefaults.getAppData(dataKey: "employeeDB")
         employees.append(employee)
         return appUserDefaults.setAppData(data: employees, dataKey: "employeeDB")
     }
     
-    mutating func createEmployee(fullName:String,email:String,password:String,profilePicture:UIImage,isManager:Bool) -> Employee? {
+    mutating func createEmployee(fullName:String,email:String,password:String,profilePicture:UIImage,isManager:Bool)throws -> Employee? {
         let userID = "\(fullName)\(Int.random(in: 1000...9999))"
         if isManager{
             let manager = Employee(employeeId: userID, fullName: fullName, email: email, isManager: isManager, password: password, profilePicture: profilePicture.pngData()!, managerID: userID)
-            let profileAdded = addEmployee(manager)
+            let profileAdded = try addEmployee(manager)
             return profileAdded ? manager : nil
         }else{
-            let managerID = getManagerID()
+            let managerID = try getManagerID()
             if managerID != ""{
                 let employee = Employee(employeeId: userID, fullName: fullName, email: email, isManager: isManager, password: password, profilePicture: profilePicture.pngData()!, managerID: managerID)
-                let profileAdded = addEmployee(employee)
+                let profileAdded = try addEmployee(employee)
                 return profileAdded ? employee : nil
             }else{
                 let manager = Employee(employeeId: userID, fullName: fullName, email: email, isManager: true, password: password, profilePicture: profilePicture.pngData()!, managerID: userID)
-                let profileAdded = addEmployee(manager)
+                let profileAdded = try addEmployee(manager)
                 return profileAdded ? manager : nil
             }
         }
