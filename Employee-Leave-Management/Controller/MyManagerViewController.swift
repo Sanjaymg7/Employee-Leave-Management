@@ -9,6 +9,9 @@ import UIKit
 
 class MyManagerViewController: UIViewController {
     
+    let imageService = ImageService()
+    let employeeDataManager = EmployeeDataManager()
+    
     @IBOutlet weak var userWelcomeLabel: UILabel!
     @IBOutlet weak var managerNameLabel: UILabel!
     @IBOutlet weak var managerEmailLabel: UILabel!
@@ -22,21 +25,19 @@ class MyManagerViewController: UIViewController {
             if let manager = employeeManager{
                 managerNameLabel.text = manager.fullName
                 managerEmailLabel.text = manager.email
-                managerProfilePicture.image = UIImage(data: manager.profilePicture)
+                managerProfilePicture.image = imageService.loadImage(fileName: manager.profilePicture)
             }
         }
     }
     
 
     @IBAction func BackButtonPressed(_ sender: UIButton) {
+        managerProfilePicture.image = nil
         dismiss(animated: true, completion: nil)
     }
   
     
     @IBAction func LogoutButtonPressed(_ sender: UIButton) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let HomePageViewController = storyBoard.instantiateViewController(withIdentifier: "MainPage")
-        HomePageViewController.modalPresentationStyle = .fullScreen
-        self.present(HomePageViewController, animated:true, completion:nil)
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
     }
 }

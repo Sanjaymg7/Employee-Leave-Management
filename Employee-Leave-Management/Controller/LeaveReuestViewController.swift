@@ -9,6 +9,8 @@ import UIKit
 
 class LeaveReuestViewController: UIViewController {
     
+    let leaveDataManager = LeaveDataManager()
+    
     @IBOutlet weak var table:UITableView!
     var leaveRequests:[Leave] = []
     
@@ -24,10 +26,7 @@ class LeaveReuestViewController: UIViewController {
     }
     
     @IBAction func LogoutButtonPressed(_ sender: UIButton) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let HomePageViewController = storyBoard.instantiateViewController(withIdentifier: "MainPage")
-        HomePageViewController.modalPresentationStyle = .fullScreen
-        self.present(HomePageViewController, animated:true, completion:nil)
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
     }
     
 }
@@ -59,6 +58,10 @@ extension LeaveReuestViewController:UITableViewDataSource,UITableViewDelegate{
             if response {
                 leaveRequests.remove(at: indexPath.row)
                 table.reloadData()
+            }else{
+                let alert = UIAlertController(title: "Alert\n", message: "Something Went Wrong!!", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }

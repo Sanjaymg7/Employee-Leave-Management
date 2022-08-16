@@ -7,9 +7,9 @@
 
 import Foundation
 enum LeaveStatus:String,Codable{
-    case accepted="accepted"
-    case rejected="rejected"
-    case applied="applied"
+    case accepted
+    case rejected
+    case applied
 }
 struct Leave:Codable{
     var leaveId:String
@@ -19,5 +19,5 @@ struct Leave:Codable{
     var requestorID:String
     var requestorName:String
     var managerID:String
-    var status:String
+    var status:LeaveStatus
 }

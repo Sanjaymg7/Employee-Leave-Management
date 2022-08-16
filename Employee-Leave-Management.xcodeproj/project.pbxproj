@@ -29,6 +29,7 @@
 		A173F26428A514160024262F /* LeaveRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A173F26328A514160024262F /* LeaveRequestCell.swift */; };
 		A173F26728A514370024262F /* MyLeavesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A173F26628A514370024262F /* MyLeavesCell.swift */; };
 		A1A3F69928AB5C6D00B32946 /* UserDefaultExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A3F69828AB5C6D00B32946 /* UserDefaultExtension.swift */; };
+		A1A3F69C28AB984100B32946 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A3F69B28AB984100B32946 /* ImageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		A173F26328A514160024262F /* LeaveRequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveRequestCell.swift; sourceTree = "<group>"; };
 		A173F26628A514370024262F /* MyLeavesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLeavesCell.swift; sourceTree = "<group>"; };
 		A1A3F69828AB5C6D00B32946 /* UserDefaultExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultExtension.swift; sourceTree = "<group>"; };
+		A1A3F69B28AB984100B32946 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				5EFE6C2E28A4C969008364B8 /* Leave.swift */,
 				5EFE6C3028A4CA5A008364B8 /* LeaveDataManager.swift */,
 				A1A3F69828AB5C6D00B32946 /* UserDefaultExtension.swift */,
+				A1A3F69B28AB984100B32946 /* ImageService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				5E9A9D1B28A3875000194FEE /* LoginViewController.swift in Sources */,
 				5E9A9D2328A3890E00194FEE /* ApplyLeavesViewController.swift in Sources */,
 				A1063EA828A37AAA004C1FE4 /* SignUpViewController.swift in Sources */,
+				A1A3F69C28AB984100B32946 /* ImageService.swift in Sources */,
 				A173F25928A4B8C00024262F /* EmployeeDataManager.swift in Sources */,
 				A173F26428A514160024262F /* LeaveRequestCell.swift in Sources */,
 				A173F25628A4B8A30024262F /* Employee.swift in Sources */,
