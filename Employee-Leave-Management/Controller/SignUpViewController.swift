@@ -45,6 +45,10 @@ class SignUpViewController: UIViewController {
                 if let createdEmployee = employee{
                     currentEmployee = createdEmployee
                     performSegue(withIdentifier: "HomePage", sender: self)
+                }else{
+                    let alert = UIAlertController(title: "Alert\n", message: "Something Went Wrong!!", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
                 }
             }
         }
