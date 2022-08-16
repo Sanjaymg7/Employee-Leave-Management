@@ -8,6 +8,7 @@
 import UIKit
 
 var currentEmployee:Employee?
+var appUserDefaults = UserDefaults.standard
 var employeeDataManager = EmployeeDataManager()
 var leaveDataManager = LeaveDataManager()
 
