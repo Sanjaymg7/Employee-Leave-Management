@@ -50,35 +50,36 @@ struct EmployeeDataManager {
         return ""
     }
     
-    func addEmployee(_ employee:Employee){
+    func addEmployee(_ employee:Employee)->Bool{
         var employees = getAllEmployees()
         employees.append(employee)
         do{
             let encoder = JSONEncoder()
             let employeeSchema = try encoder.encode(employees)
             employeeUserDefaults.setValue(employeeSchema, forKey: "employeeDB")
-        }catch let err{
-            print(err)
+            return true
+        }catch{
+            return false
         }
     }
     
-    mutating func createEmployee(fullName:String,email:String,password:String,profilePicture:UIImage,isManager:Bool) -> Employee {
+    mutating func createEmployee(fullName:String,email:String,password:String,profilePicture:UIImage,isManager:Bool) -> Employee? {
         print("creating employee")
         let userID = "\(fullName)\(Int.random(in: 1000...9999))"
         if isManager{
             let manager = Employee(employeeId: userID, fullName: fullName, email: email, isManager: isManager, password: password, profilePicture: profilePicture.pngData()!, managerID: userID)
-            addEmployee(manager)
-            return manager
+            let profileAdded = addEmployee(manager)
+            return profileAdded ? manager : nil
         }else{
             let managerID = getManagerID()
             if managerID != ""{
                 let employee = Employee(employeeId: userID, fullName: fullName, email: email, isManager: isManager, password: password, profilePicture: profilePicture.pngData()!, managerID: managerID)
-                addEmployee(employee)
-                return employee
+                let profileAdded = addEmployee(employee)
+                return profileAdded ? employee : nil
             }else{
-                let manager = Employee(employeeId: userID, fullName: fullName, email: email, isManager: isManager, password: password, profilePicture: profilePicture.pngData()!, managerID: userID)
-                addEmployee(manager)
-                return manager
+                let manager = Employee(employeeId: userID, fullName: fullName, email: email, isManager: true, password: password, profilePicture: profilePicture.pngData()!, managerID: userID)
+                let profileAdded = addEmployee(manager)
+                return profileAdded ? manager : nil
             }
         }
     }
