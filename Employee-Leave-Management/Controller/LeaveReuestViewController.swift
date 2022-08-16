@@ -55,9 +55,11 @@ extension LeaveReuestViewController:UITableViewDataSource,UITableViewDelegate{
         if let button = sender.titleLabel?.text{
             let indexPath = IndexPath(row: sender.tag, section: 0)
             let selectedLeave = leaveRequests[indexPath.row]
-            leaveDataManager.leaveAction(leaveId: selectedLeave.leaveId, isAccepted: button == "Accept" ? true : false)
-            leaveRequests.remove(at: indexPath.row)
-            table.reloadData()
+            let response = leaveDataManager.leaveAction(leaveId: selectedLeave.leaveId, isAccepted: button == "Accept" ? true : false)
+            if response {
+                leaveRequests.remove(at: indexPath.row)
+                table.reloadData()
+            }
         }
     }
     

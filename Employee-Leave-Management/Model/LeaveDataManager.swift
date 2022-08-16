@@ -7,61 +7,36 @@
 
 import Foundation
 
-let leaveRequestDefaults = UserDefaults.standard
-
 struct LeaveDataManager {
     
-    func setLeaveData(leaveData:[Leave]) -> Bool{
-        do{
-            let encoder = JSONEncoder()
-            let leaveRequestSchemaData = try encoder.encode(leaveData)
-            leaveRequestDefaults.setValue(leaveRequestSchemaData, forKey: "leaveRequestDB")
-            return true
-        }catch{
-            return false
-        }
-    }
-    
-    func getAllLeaves() -> [Leave]{
-        guard let leaveRequestSchemaData = leaveRequestDefaults.object(forKey: "leaveRequestDB") as? Data else{return []}
-        do{
-            let decoder = JSONDecoder()
-            let leaveRequests = try decoder.decode([Leave].self, from: leaveRequestSchemaData)
-            return leaveRequests
-        }catch{
-            return []
-        }
-                
-    }
-    
     func removeAllLeaveRequests(){
-        leaveRequestDefaults.removeObject(forKey: "leaveRequestDB")
+        appUserDefaults.removeObject(forKey: "leaveRequestDB")
     }
 
     func getLeavebyEmployeeId(employeeId:String)->[Leave]{
-        let allLeaves = getAllLeaves()
+        let allLeaves:[Leave] = appUserDefaults.getAppData(dataKey: "leaveRequestDB")
         return allLeaves.filter({$0.requestorID==employeeId})
     }
     
     func getLeavebyManagerId(managerId:String)->[Leave]{
-        let allLeaves = getAllLeaves()
+        let allLeaves:[Leave] = appUserDefaults.getAppData(dataKey: "leaveRequestDB")
         return allLeaves.filter({$0.managerID==managerId}).filter({$0.status==LeaveStatus.applied.rawValue})
     }
     
-    func leaveAction(leaveId:String, isAccepted:Bool){
-        var allLeaves = getAllLeaves()
+    func leaveAction(leaveId:String, isAccepted:Bool)->Bool{
+        var allLeaves:[Leave] = appUserDefaults.getAppData(dataKey: "leaveRequestDB")
         for index in 0...allLeaves.count-1{
             if allLeaves[index].leaveId == leaveId{
                 allLeaves[index].status = isAccepted ? LeaveStatus.accepted.rawValue : LeaveStatus.rejected.rawValue
             }
         }
-        let _ = setLeaveData(leaveData: allLeaves)
+        return appUserDefaults.setAppData(data: allLeaves, dataKey: "leaveRequestDB")
     }
    
     func postLeaves(_ leave:Leave) -> Bool{
-        var leaves = getAllLeaves()
+        var leaves:[Leave] = appUserDefaults.getAppData(dataKey: "leaveRequestDB")
         leaves.append(leave)
-        return setLeaveData(leaveData: leaves)
+        return appUserDefaults.setAppData(data: leaves, dataKey: "leaveRequestDB")
     }
 
     
