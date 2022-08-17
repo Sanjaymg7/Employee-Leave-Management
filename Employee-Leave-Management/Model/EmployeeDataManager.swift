@@ -50,7 +50,7 @@ struct EmployeeDataManager {
         return appUserDefaults.setAppData(data: employees, dataKey: "employeeDB")
     }
     
-    func createEmployee(fullName:String,email:String,password:String,profilePicture:UIImage,isManager:Bool) throws -> Employee? {
+    func createEmployee(fullName:String,email:String,password:String,profilePicture:UIImage,isManager:Bool)  -> Employee? {
         let userID = "\(fullName)\(Int.random(in: 1000...9999))"
         let profilePicName = "\(userID).png"
         let filePath = imageService.saveImage(image: profilePicture, fileName: profilePicName)
