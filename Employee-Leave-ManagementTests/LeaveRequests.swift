@@ -9,29 +9,38 @@ import XCTest
 @testable import Employee_Leave_Management
 
 class EmployeeTests: XCTestCase {
-    var leaveReuests:LeaveDataManager!
+    var leaveRequests:LeaveDataManager!
     
     override func setUp() {
         super.setUp()
-        leaveReuests=LeaveDataManager()
+        leaveRequests=LeaveDataManager()
     }
+    
     override func tearDown() {
-        leaveReuests=nil
         super.tearDown()
+        leaveRequests=nil
     }
-    func test_craete_leaverequests()throws{
-        XCTAssertNoThrow(try leaveReuests.leaveRequests(fromDate: "aug 20 2022", toDate: "aug 20 2022", reason: "sick", requestorID: "112", managerID: "114", status: "applied", requestorName: "yashwitha"))
+    
+    func test_leaveRequest(){
+        let leave = leaveRequests.leaveRequests(fromDate: "aug 20 2022", toDate: "aug 21 2022", reason: "Vacation", requestorID: "sanjay1234", managerID: "sanjay1234", status: LeaveStatus.applied.rawValue, requestorName: "Sanjay")
+        XCTAssertNotNil(leave)
+        XCTAssertEqual(leave?.reason, "Vacation")
     }
-    func test_getLeaveby_employeeId()throws{
-        XCTAssertNoThrow(try leaveReuests.getLeavebyEmployeeId(employeeId: "112"))
+    
+    func test_getLeaveByEmployeeId(){
+        let employeeLeave = leaveRequests.getLeavebyEmployeeId(employeeId: "sanjay1234")
+        XCTAssertGreaterThan(employeeLeave.count, 0)
+        XCTAssertEqual(leaveRequests.getLeavebyEmployeeId(employeeId: "123").count, 0)
     }
-    func test_getLeavebyManagerId() throws{
-        XCTAssertNoThrow(try leaveReuests.getLeavebyManagerId(managerId: "114"))
+    
+    func test_getLeaveByManagerId(){
+        XCTAssertGreaterThan(leaveRequests.getLeavebyManagerId(managerId: "sanjay1234").count, 0)
+        XCTAssertEqual(leaveRequests.getLeavebyManagerId(managerId: "123").count, 0)
     }
-    func test_leaveAction() throws{
-        XCTAssertNoThrow(try leaveReuests.leaveAction(leaveId: "112", isAccepted: true))
+    
+    func test_leaveAction(){
+        XCTAssertTrue(leaveRequests.leaveAction(leaveId: "sanjay1234sanjay12344645", isAccepted: true))
+        XCTAssertFalse(leaveRequests.leaveAction(leaveId: "12", isAccepted: true))
     }
-//    func test_post_leaves() throws{
-//        XCTAssertNoThrow(try leaveReuests.postLeaves(Leave(leaveId: "112", fromDate: "aug 20 2022", toDate: "aug 18 2022", reason: "sik", requestorID: "112", requestorName: "114", managerID: "114", status: "applied")))
-//    }
+    
 }

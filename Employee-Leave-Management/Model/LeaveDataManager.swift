@@ -26,13 +26,15 @@ struct LeaveDataManager {
     }
     
     func leaveAction(leaveId:String, isAccepted:Bool) -> Bool{
+        var isLeaveAvailable = false
         var allLeaves:[Leave] = appUserDefaults.getAppData(dataKey: "leaveRequestDB")
         for index in 0...allLeaves.count-1{
             if allLeaves[index].leaveId == leaveId{
                 allLeaves[index].status = isAccepted ? LeaveStatus.accepted : LeaveStatus.rejected
+                isLeaveAvailable = true
             }
         }
-        return appUserDefaults.setAppData(data: allLeaves, dataKey: "leaveRequestDB")
+        return isLeaveAvailable ? appUserDefaults.setAppData(data: allLeaves, dataKey: "leaveRequestDB") : false
     }
    
     func postLeaves(_ leave:Leave) -> Bool{
