@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
         let enteredEmail = userEmail.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let enteredPassword = userPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         if ((enteredEmail != "") && (enteredPassword != "")){
-            if let employee = try!  employeeDataManager.validateEmployee(email: enteredEmail!, password: enteredPassword!){
+            if let employee = employeeDataManager.validateEmployee(email: enteredEmail!, password: enteredPassword!){
                 currentEmployee = employee
                 performSegue(withIdentifier: "HomePage", sender: self)
             }else{

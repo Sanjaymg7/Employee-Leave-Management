@@ -65,8 +65,8 @@ extension SignUpViewController:UIImagePickerControllerDelegate, UINavigationCont
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             profilePictureImage.contentMode = .scaleAspectFill
-            profilePictureImage.image = pickedImage
-            profileImage = pickedImage
+            profilePictureImage.image = pickedImage.resize(targetSize: CGSize(width: 500, height: 500))
+            profileImage = pickedImage.resize(targetSize: CGSize(width: 500, height: 500))
         }
         self.dismiss(animated: true, completion: nil)
     }

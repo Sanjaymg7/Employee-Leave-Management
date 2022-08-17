@@ -17,7 +17,7 @@ class MyLeavesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let employee = currentEmployee{
-            myLeaves = try! leaveDataManager.getLeavebyEmployeeId(employeeId: employee.employeeId)
+            myLeaves = leaveDataManager.getLeavebyEmployeeId(employeeId: employee.employeeId)
         }
     }
     
