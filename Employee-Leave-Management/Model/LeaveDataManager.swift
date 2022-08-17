@@ -42,7 +42,7 @@ struct LeaveDataManager {
     }
 
     
-    func leaveRequests(fromDate:String,toDate:String,reason:String,requestorID:String,managerID:String,status:String,requestorName:String) throws-> Leave?  {
+    func leaveRequests(fromDate:String,toDate:String,reason:String,requestorID:String,managerID:String,status:String,requestorName:String) -> Leave?  {
         let leave = Leave(leaveId: "\(requestorID)\(managerID)\(Int.random(in: 1000...9999))", fromDate: fromDate, toDate: toDate, reason: reason, requestorID:requestorID, requestorName: requestorName, managerID: managerID, status: LeaveStatus.applied)
         let isLeaveCreated = postLeaves(leave)
         return isLeaveCreated ? leave : nil

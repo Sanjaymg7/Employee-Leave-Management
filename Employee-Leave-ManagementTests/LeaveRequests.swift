@@ -31,7 +31,7 @@ class EmployeeTests: XCTestCase {
     func test_leaveAction() throws{
         XCTAssertNoThrow(try leaveReuests.leaveAction(leaveId: "112", isAccepted: true))
     }
-    func test_post_leaves() throws{
-        XCTAssertNoThrow(try leaveReuests.postLeaves(Leave(leaveId: "112", fromDate: "aug 20 2022", toDate: "aug 18 2022", reason: "sik", requestorID: "112", requestorName: "114", managerID: "114", status: "applied")))
-    }
+//    func test_post_leaves() throws{
+//        XCTAssertNoThrow(try leaveReuests.postLeaves(Leave(leaveId: "112", fromDate: "aug 20 2022", toDate: "aug 18 2022", reason: "sik", requestorID: "112", requestorName: "114", managerID: "114", status: "applied")))
+//    }
 }
