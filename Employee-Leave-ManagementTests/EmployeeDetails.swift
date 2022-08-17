@@ -10,6 +10,7 @@ import XCTest
 class EmployeeDetails: XCTestCase {
 
         var emplyoee:EmployeeDataManager!
+        var  appUserDefaults = UserDefaults.standard
         
         override func setUp() {
             super.setUp()
@@ -23,27 +24,27 @@ class EmployeeDetails: XCTestCase {
             let image = UIImage(named: "cartoon")!
             // create Employee
             let emplyoeedetail1 =  emplyoee.createEmployee(fullName: "yashwitha", email: "yashwitha@mail.com", password: "yash12", profilePicture:image , isManager: true)
-            let emplyoeedetail2 =  emplyoee.createEmployee(fullName: "", email: "", password: "", profilePicture:UIImage() , isManager: true)
-           XCTAssertNotNil(emplyoeedetail1)
+            let e      mplyoeedetail2 =  emplyoee.createEmployee(fullName: "", email: "", password: "", profilePicture:UIImage() , isManager: true)
+            // get the emplyoee total counts
+            let emp:[Employee] = appUserDefaults.getAppData(dataKey: "employeeDB")
+            appUserDefaults.removeObject(forKey: "employeeDB")
+            XCTAssertGreaterThan(emp.count, 0)
+            XCTAssertNotNil(emplyoeedetail1)
             XCTAssertNil(emplyoeedetail2)
-            
-            // get Emplyoee_ID
-            let employeeId="112"
-            let empID =  emplyoee.getEmployeeById(employeeId: employeeId)
-            XCTAssert(empID == nil)
-
-            
+           
         }
         
         func test_add_employee() {
             let image = UIImage(named: "cartoon")!
             let emplyoeedetail1 =  emplyoee.createEmployee(fullName: "angel", email: "angel@mail.com", password: "angel2", profilePicture:image , isManager: true)
-            let emplyoeedetail2 =  emplyoee.createEmployee(fullName: "", email: "", password: "", profilePicture:UIImage() , isManager: true)
+            // check the emplyoee is manager or not
+            if(emplyoeedetail1?.isManager==true){
+                XCTAssert(true)
+            }
             let emp1 = (emplyoee.addEmployee(emplyoeedetail1!))
-//            let emp2 = try(emplyoee.addEmployee(emplyoeedetail2!))
-            XCTAssertNotNil(emp1)
-//            XCTAssertNotNil(emp2)
+            XCTAssert(emp1)
            
+        
         }
         
     }

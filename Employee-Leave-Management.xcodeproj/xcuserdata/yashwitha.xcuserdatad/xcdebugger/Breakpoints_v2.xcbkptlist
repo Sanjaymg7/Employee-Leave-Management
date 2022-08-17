@@ -174,8 +174,8 @@
             filePath = "Employee-Leave-ManagementTests/EmployeeDetails.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "EmployeeDetails"
             landmarkType = "3">
          </BreakpointContent>
@@ -190,8 +190,8 @@
             filePath = "Employee-Leave-ManagementTests/EmployeeDetails.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "test_Emplyoee_details()"
             landmarkType = "7">
          </BreakpointContent>
@@ -206,9 +206,73 @@
             filePath = "Employee-Leave-ManagementTests/EmployeeDetails.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "test_add_employee()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "188879A4-FCEB-4DEA-95C5-3AD3BFE806A3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Employee-Leave-ManagementTests/EmployeeDetails.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
             endingLineNumber = "38"
             landmarkName = "test_add_employee()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "188879A4-FCEB-4DEA-95C5-3AD3BFE806A3 - 99f95a55dd9f3966"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Employee_Leave_ManagementTests.EmployeeDetails.test_add_employee() -&gt; ()"
+                  moduleName = "Employee-Leave-ManagementTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yashwitha/Desktop/Employee-Leave-Management/Employee-Leave-ManagementTests/EmployeeDetails.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "147">
+               </Location>
+               <Location
+                  uuid = "188879A4-FCEB-4DEA-95C5-3AD3BFE806A3 - 99f95a55dd9f3966"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Employee_Leave_ManagementTests.EmployeeDetails.test_add_employee() -&gt; ()"
+                  moduleName = "Employee-Leave-ManagementTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yashwitha/Desktop/Employee-Leave-Management/Employee-Leave-ManagementTests/EmployeeDetails.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "109">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8B13487B-4675-4C12-9CD0-A2180A52D7DE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Employee-Leave-ManagementTests/EmployeeDetails.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "test_Emplyoee_details()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
