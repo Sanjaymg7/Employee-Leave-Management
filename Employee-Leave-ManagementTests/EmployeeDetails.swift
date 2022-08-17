@@ -19,19 +19,31 @@ class EmployeeDetails: XCTestCase {
             emplyoee=nil
             super.tearDown()
         }
-        func test_create_employee()throws{
-            XCTAssertNoThrow(try emplyoee.createEmployee(fullName: "yashwitha", email: "yashwitha@mail.com", password: "yash12", profilePicture: UIImage(named: "img.png")!, isManager: true))
+        func test_Emplyoee_details(){
+            let image = UIImage(named: "cartoon")!
+            // create Employee
+            let emplyoeedetail1 =  emplyoee.createEmployee(fullName: "yashwitha", email: "yashwitha@mail.com", password: "yash12", profilePicture:image , isManager: true)
+            let emplyoeedetail2 =  emplyoee.createEmployee(fullName: "", email: "", password: "", profilePicture:UIImage() , isManager: true)
+           XCTAssertNotNil(emplyoeedetail1)
+            XCTAssertNil(emplyoeedetail2)
+            
+            // get Emplyoee_ID
+            let employeeId="112"
+            let empID =  emplyoee.getEmployeeById(employeeId: employeeId)
+            XCTAssert(empID == nil)
+
+            
         }
-        func test_get_employeeById()throws{
-            XCTAssertNoThrow(try emplyoee.getEmployeeById(employeeId: "112"))
+        
+        func test_add_employee() {
+            let image = UIImage(named: "cartoon")!
+            let emplyoeedetail1 =  emplyoee.createEmployee(fullName: "angel", email: "angel@mail.com", password: "angel2", profilePicture:image , isManager: true)
+            let emplyoeedetail2 =  emplyoee.createEmployee(fullName: "", email: "", password: "", profilePicture:UIImage() , isManager: true)
+            let emp1 = (emplyoee.addEmployee(emplyoeedetail1!))
+//            let emp2 = try(emplyoee.addEmployee(emplyoeedetail2!))
+            XCTAssertNotNil(emp1)
+//            XCTAssertNotNil(emp2)
+           
         }
-        func test_get_managerID() throws{
-            XCTAssertNoThrow(try emplyoee.getManagerID())
-        }
-//        func test_add_employee() throws{
-//            XCTAssertNoThrow(try emplyoee.addEmployee(Employee(employeeId: "112", fullName: "yashwitha", email: "yashwitha@mail.com", isManager: true, password: "yash12", profilePicture: UIImage(named: "img.png")! , managerID: "112")))
-//        }
-        func test_validateEmployee() throws{
-            XCTAssertNoThrow(try emplyoee.validateEmployee(email: "yashwitha@mail.com", password: "yash12"))
-        }
+        
     }
