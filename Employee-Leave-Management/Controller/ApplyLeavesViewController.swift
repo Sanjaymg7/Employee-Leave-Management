@@ -74,6 +74,7 @@ class ApplyLeavesViewController: UIViewController ,UITextViewDelegate{
     }
     
     @IBAction func LogoutButtonPressed(_ sender: UIButton) {
+        currentEmployee = nil
         self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
     }
     

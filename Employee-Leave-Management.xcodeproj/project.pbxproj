@@ -24,6 +24,14 @@
 		A11E6CFE28A26D6E00725122 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A11E6CFC28A26D6E00725122 /* Main.storyboard */; };
 		A11E6D0028A26D7900725122 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A11E6CFF28A26D7900725122 /* Assets.xcassets */; };
 		A11E6D0328A26D7900725122 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A11E6D0128A26D7900725122 /* LaunchScreen.storyboard */; };
+		A161F6C528AE4F5700967986 /* EmployeeLeaveManagementCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A161F6C328AE4F5700967986 /* EmployeeLeaveManagementCoreData.xcdatamodeld */; };
+		A161F6CC28AE506800967986 /* CDLeave+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A161F6C828AE506800967986 /* CDLeave+CoreDataClass.swift */; };
+		A161F6CD28AE506800967986 /* CDLeave+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A161F6C928AE506800967986 /* CDLeave+CoreDataProperties.swift */; };
+		A161F6CE28AE506800967986 /* CDEmployee+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A161F6CA28AE506800967986 /* CDEmployee+CoreDataClass.swift */; };
+		A161F6CF28AE506800967986 /* CDEmployee+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A161F6CB28AE506800967986 /* CDEmployee+CoreDataProperties.swift */; };
+		A161F6D528AE509500967986 /* PersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A161F6D428AE509500967986 /* PersistentStorage.swift */; };
+		A161F6DA28AE515000967986 /* EmployeeCoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A161F6D928AE515000967986 /* EmployeeCoreDataRepository.swift */; };
+		A161F6E028AE557100967986 /* LeaveCoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A161F6DF28AE557100967986 /* LeaveCoreDataRepository.swift */; };
 		A173F25628A4B8A30024262F /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = A173F25528A4B8A30024262F /* Employee.swift */; };
 		A173F25928A4B8C00024262F /* EmployeeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A173F25828A4B8C00024262F /* EmployeeDataManager.swift */; };
 		A173F26428A514160024262F /* LeaveRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A173F26328A514160024262F /* LeaveRequestCell.swift */; };
@@ -63,6 +71,14 @@
 		A11E6CFF28A26D7900725122 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A11E6D0228A26D7900725122 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A11E6D0428A26D7900725122 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A161F6C428AE4F5700967986 /* EmployeeLeaveManagementCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EmployeeLeaveManagementCoreData.xcdatamodel; sourceTree = "<group>"; };
+		A161F6C828AE506800967986 /* CDLeave+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDLeave+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A161F6C928AE506800967986 /* CDLeave+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDLeave+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A161F6CA28AE506800967986 /* CDEmployee+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDEmployee+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A161F6CB28AE506800967986 /* CDEmployee+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDEmployee+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A161F6D428AE509500967986 /* PersistentStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorage.swift; sourceTree = "<group>"; };
+		A161F6D928AE515000967986 /* EmployeeCoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCoreDataRepository.swift; sourceTree = "<group>"; };
+		A161F6DF28AE557100967986 /* LeaveCoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveCoreDataRepository.swift; sourceTree = "<group>"; };
 		A173F25528A4B8A30024262F /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		A173F25828A4B8C00024262F /* EmployeeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDataManager.swift; sourceTree = "<group>"; };
 		A173F26328A514160024262F /* LeaveRequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveRequestCell.swift; sourceTree = "<group>"; };
@@ -157,6 +173,8 @@
 		A11E6CF528A26D6E00725122 /* Employee-Leave-Management */ = {
 			isa = PBXGroup;
 			children = (
+				A161F6D828AE512D00967986 /* CoreDataRepository */,
+				A161F6C228AE4F1F00967986 /* CoreDataHelper */,
 				A11E6CF628A26D6E00725122 /* AppDelegate.swift */,
 				A11E6CF828A26D6E00725122 /* SceneDelegate.swift */,
 				A1063EA628A37746004C1FE4 /* Model */,
@@ -165,8 +183,30 @@
 				A11E6CFF28A26D7900725122 /* Assets.xcassets */,
 				A11E6D0128A26D7900725122 /* LaunchScreen.storyboard */,
 				A11E6D0428A26D7900725122 /* Info.plist */,
+				A161F6C328AE4F5700967986 /* EmployeeLeaveManagementCoreData.xcdatamodeld */,
 			);
 			path = "Employee-Leave-Management";
+			sourceTree = "<group>";
+		};
+		A161F6C228AE4F1F00967986 /* CoreDataHelper */ = {
+			isa = PBXGroup;
+			children = (
+				A161F6C828AE506800967986 /* CDLeave+CoreDataClass.swift */,
+				A161F6C928AE506800967986 /* CDLeave+CoreDataProperties.swift */,
+				A161F6CA28AE506800967986 /* CDEmployee+CoreDataClass.swift */,
+				A161F6CB28AE506800967986 /* CDEmployee+CoreDataProperties.swift */,
+				A161F6D428AE509500967986 /* PersistentStorage.swift */,
+			);
+			path = CoreDataHelper;
+			sourceTree = "<group>";
+		};
+		A161F6D828AE512D00967986 /* CoreDataRepository */ = {
+			isa = PBXGroup;
+			children = (
+				A161F6D928AE515000967986 /* EmployeeCoreDataRepository.swift */,
+				A161F6DF28AE557100967986 /* LeaveCoreDataRepository.swift */,
+			);
+			path = CoreDataRepository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,23 +319,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A161F6D528AE509500967986 /* PersistentStorage.swift in Sources */,
 				A1063EAC28A37AE5004C1FE4 /* HomeViewController.swift in Sources */,
 				5EFE6C2F28A4C969008364B8 /* Leave.swift in Sources */,
+				A161F6CC28AE506800967986 /* CDLeave+CoreDataClass.swift in Sources */,
 				5EFE6C3128A4CA5A008364B8 /* LeaveDataManager.swift in Sources */,
+				A161F6CE28AE506800967986 /* CDEmployee+CoreDataClass.swift in Sources */,
 				A173F26728A514370024262F /* MyLeavesCell.swift in Sources */,
+				A161F6DA28AE515000967986 /* EmployeeCoreDataRepository.swift in Sources */,
 				A11E6CFB28A26D6E00725122 /* ViewController.swift in Sources */,
 				A11E6CF728A26D6E00725122 /* AppDelegate.swift in Sources */,
 				5EFE6C3328A4FE0C008364B8 /* LeaveReuestViewController.swift in Sources */,
 				A1A3F69928AB5C6D00B32946 /* UserDefaultExtension.swift in Sources */,
 				5E9A9D1B28A3875000194FEE /* LoginViewController.swift in Sources */,
+				A161F6C528AE4F5700967986 /* EmployeeLeaveManagementCoreData.xcdatamodeld in Sources */,
 				5E9A9D2328A3890E00194FEE /* ApplyLeavesViewController.swift in Sources */,
 				A1063EA828A37AAA004C1FE4 /* SignUpViewController.swift in Sources */,
 				A1A3F69C28AB984100B32946 /* ImageService.swift in Sources */,
 				A173F25928A4B8C00024262F /* EmployeeDataManager.swift in Sources */,
 				A173F26428A514160024262F /* LeaveRequestCell.swift in Sources */,
+				A161F6CD28AE506800967986 /* CDLeave+CoreDataProperties.swift in Sources */,
 				A173F25628A4B8A30024262F /* Employee.swift in Sources */,
 				5EFE6C3528A5024A008364B8 /* MyLeavesViewController.swift in Sources */,
+				A161F6E028AE557100967986 /* LeaveCoreDataRepository.swift in Sources */,
 				A1063EAF28A37B27004C1FE4 /* MyManagerViewController.swift in Sources */,
+				A161F6CF28AE506800967986 /* CDEmployee+CoreDataProperties.swift in Sources */,
 				A11E6CF928A26D6E00725122 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -566,6 +614,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A161F6C328AE4F5700967986 /* EmployeeLeaveManagementCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A161F6C428AE4F5700967986 /* EmployeeLeaveManagementCoreData.xcdatamodel */,
+			);
+			currentVersion = A161F6C428AE4F5700967986 /* EmployeeLeaveManagementCoreData.xcdatamodel */;
+			path = EmployeeLeaveManagementCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A11E6CEB28A26D6E00725122 /* Project object */;
 }

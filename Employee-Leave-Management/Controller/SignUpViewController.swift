@@ -43,7 +43,7 @@ class SignUpViewController: UIViewController {
         let managerBoolean = isManager.isOn
         if let image = profileImage{
             if((fullName != "") && (email != "") && (password != "")){
-                let employee = try! employeeDataManager.createEmployee(fullName: fullName!, email: email!, password: password!, profilePicture: image, isManager: managerBoolean)
+                let employee = employeeDataManager.createEmployee(fullName: fullName!, email: email!, password: password!, profilePicture: image, isManager: managerBoolean)
                 if let createdEmployee = employee{
                     currentEmployee = createdEmployee
                     profileImage = nil
@@ -65,8 +65,8 @@ extension SignUpViewController:UIImagePickerControllerDelegate, UINavigationCont
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             profilePictureImage.contentMode = .scaleAspectFill
-            profilePictureImage.image = pickedImage.resize(targetSize: CGSize(width: 500, height: 500))
-            profileImage = pickedImage.resize(targetSize: CGSize(width: 500, height: 500))
+            profilePictureImage.image = pickedImage
+            profileImage = pickedImage
         }
         self.dismiss(animated: true, completion: nil)
     }
