@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H2026" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CDEmployee" representedClassName="CDEmployee" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="employeeId" optional="YES" attributeType="String"/>
+        <attribute name="fullName" optional="YES" attributeType="String"/>
+        <attribute name="isManager" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="managerID" optional="YES" attributeType="String"/>
+        <attribute name="password" optional="YES" attributeType="String"/>
+        <attribute name="profilePicture" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="CDLeave" representedClassName="CDLeave" syncable="YES">
+        <attribute name="fromDate" optional="YES" attributeType="String"/>
+        <attribute name="leaveId" optional="YES" attributeType="String"/>
+        <attribute name="managerID" optional="YES" attributeType="String"/>
+        <attribute name="reason" optional="YES" attributeType="String"/>
+        <attribute name="requestorID" optional="YES" attributeType="String"/>
+        <attribute name="requestorName" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <attribute name="toDate" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="CDEmployee" positionX="-36" positionY="9" width="128" height="148"/>
+        <element name="CDLeave" positionX="0" positionY="99" width="128" height="163"/>
+    </elements>
+</model>

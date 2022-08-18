@@ -20,4 +20,5 @@ struct Leave:Codable{
     var requestorName:String
     var managerID:String
     var status:LeaveStatus
+    
 }
