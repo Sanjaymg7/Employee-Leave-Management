@@ -25,7 +25,7 @@ class MyManagerViewController: UIViewController {
             if let manager = employeeManager{
                 managerNameLabel.text = manager.fullName
                 managerEmailLabel.text = manager.email
-                managerProfilePicture.image = imageService.loadImage(fileName: manager.profilePicture)?.resize(targetSize: CGSize(width: 500, height: 500))
+                managerProfilePicture.image = imageService.loadImage(fileName: manager.profilePicture)
             }
         }
     }
@@ -38,6 +38,7 @@ class MyManagerViewController: UIViewController {
   
     
     @IBAction func LogoutButtonPressed(_ sender: UIButton) {
+        currentEmployee = nil
         self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
     }
 }

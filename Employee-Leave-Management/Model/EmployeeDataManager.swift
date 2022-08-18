@@ -10,10 +10,12 @@ import UIKit
 struct EmployeeDataManager {
     
     let imageService = ImageService()
-    let appUserDefaults = UserDefaults.standard
+//    let appUserDefaults = UserDefaults.standard
+    let employeeCoreDataRepository = EmployeeCoreDataRepository()
     
     func getEmployeeById(employeeId:String) -> Employee?{
-        let employees:[Employee] = appUserDefaults.getAppData(dataKey: "employeeDB")
+//        let employees:[Employee] = appUserDefaults.getAppData(dataKey: "employeeDB")
+        let employees:[Employee] = employeeCoreDataRepository.getAllEmployees()
         let resultEmployee = employees.filter({$0.employeeId==employeeId})
         if resultEmployee.count == 1{
             return resultEmployee[0]
@@ -22,11 +24,13 @@ struct EmployeeDataManager {
     }
     
     func removeAllUsers(){
-        appUserDefaults.removeObject(forKey: "employeeDB")
+//        appUserDefaults.removeObject(forKey: "employeeDB")
+        employeeCoreDataRepository.deleteAllEmployees()
     }
     
     func validateEmployee(email:String,password:String) -> Employee?{
-        let employees:[Employee] = appUserDefaults.getAppData(dataKey: "employeeDB")
+//        let employees:[Employee] = appUserDefaults.getAppData(dataKey: "employeeDB")
+        let employees:[Employee] = employeeCoreDataRepository.getAllEmployees()
         let reultEmployee = employees.filter({$0.email==email&&$0.password==password})
         if reultEmployee.count == 1{
             return reultEmployee[0]
@@ -35,7 +39,8 @@ struct EmployeeDataManager {
     }
     
     func getManagerID() -> String{
-        let employees:[Employee] = appUserDefaults.getAppData(dataKey: "employeeDB")
+//        let employees:[Employee] = appUserDefaults.getAppData(dataKey: "employeeDB")
+        let employees:[Employee] = employeeCoreDataRepository.getAllEmployees()
         let managers = employees.filter({$0.isManager})
         if managers.count>0{
             let randomInt = Int.random(in: 0...managers.count-1)
@@ -45,9 +50,11 @@ struct EmployeeDataManager {
     }
     
     func addEmployee(_ employee:Employee) -> Bool{
-        var employees:[Employee] = appUserDefaults.getAppData(dataKey: "employeeDB")
+//        var employees:[Employee] = appUserDefaults.getAppData(dataKey: "employeeDB")
+        var employees:[Employee] = employeeCoreDataRepository.getAllEmployees()
         employees.append(employee)
-        return appUserDefaults.setAppData(data: employees, dataKey: "employeeDB")
+//        return appUserDefaults.setAppData(data: employees, dataKey: "employeeDB")
+        return employeeCoreDataRepository.createEmployee(employee: employee)
     }
     
     func createEmployee(fullName:String,email:String,password:String,profilePicture:UIImage,isManager:Bool)  -> Employee? {
